@@ -1,0 +1,126 @@
+{
+  "created_at": "2026-11-15T11:17:53.073000+00:00",
+  "git_commit": "e0d4d68c755d93eff13d2645e6ccb8d2e9ed71bd",
+  "dirty": true,
+  "python": "3.12.3",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "httpx": "0.28.1",
+    "fastapi": "0.163.1"
+  },
+  "source_hashes": {
+    "src/moneyme_sms_spam_classifier/__init__.py": "82f9d0c27f5de8305f058aee7214fbc39e035b2da078123b35dee2a9fb8355fc",
+    "src/moneyme_sms_spam_classifier/api.py": "24e96f5c83ae67b71c03d4f2c4425b90155dabadf48ad02d5f89a17241676231",
+    "src/moneyme_sms_spam_classifier/cli.py": "1bec697b1a9ef5642d63369b91991cd434bed112335f3c32fb1236ac107e1588",
+    "src/moneyme_sms_spam_classifier/common.py": "5b7b5ad74dc8e28f9b49268f1cee45623c7ed8dd97a68d9b4ed60d3d78c06439",
+    "src/moneyme_sms_spam_classifier/data.py": "842480d5b9d68759923e38177ac57b760f2c34d3dad5c2c0c312c11e914ed7a0",
+    "src/moneyme_sms_spam_classifier/evaluation.py": "bdb017b8682bc7eb54acf86b24ebd59b129e42489e50d40c90ee34b12f1bef30",
+    "src/moneyme_sms_spam_classifier/experiments.py": "266e3ea8c75a6ff6a6cc68ead91b2edb9a583fbe2cad8fabbf03f1a28b99926e",
+    "src/moneyme_sms_spam_classifier/features.py": "ff744b22e6bac31b6cd2df7ada624b7121e572258d78d64d9cc397b166540a40",
+    "src/moneyme_sms_spam_classifier/hosted.py": "4eea5c2b756d36049b8146ea093c4fd854caa7999b07227a9ed879f526b6a40f",
+    "src/moneyme_sms_spam_classifier/inference.py": "9787805e4ffe7f9b9902af0c8e4d886692694c4d68c4289e69d76c934bd0c3ff",
+    "src/moneyme_sms_spam_classifier/reporting.py": "d9027a7f1238ee1099996cb59f946017ffe0bb329ffd31eaefd2b2d23aa6c4ef",
+    "src/moneyme_sms_spam_classifier/semantic.py": "e0bfee0cbb2ee2b0c5cdd3b5807ae98efff8d0a3130550ea58573f41d68283e4",
+    "src/moneyme_sms_spam_classifier/training.py": "2dc81680d6a324214c63a1a3e9d524411044709f6ad5f9e153fd9a9af8994dd8"
+  },
+  "selection": {
+    "candidate": "logistic_char",
+    "kind": "classical",
+    "artifact": "artifacts/release/model.joblib",
+    "sha256": "3c2f3ded80b47df84bbe3d380304aa1a8c67ddaefcc5b2226013028cba6d53e3",
+    "selection_basis": "validation spam F1, then precision; frozen before test evaluation"
+  },
+  "dataset": {
+    "raw_sha256": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d",
+    "seed": 42,
+    "raw_rows": 5574,
+    "raw_labels": {
+      "ham": 4827,
+      "spam": 747
+    },
+    "unique_rows": 5171,
+    "duplicates_removed": 403,
+    "groups": 5138,
+    "grouped_rows": 61,
+    "grouping_rule": "casefold/whitespace; long >=8-word messages mask URLs/digits",
+    "split_counts": {
+      "test": {
+        "ham": 904,
+        "spam": 130
+      },
+      "train": {
+        "ham": 2710,
+        "spam": 392
+      },
+      "validation": {
+        "ham": 904,
+        "spam": 131
+      }
+    },
+    "dataset_sha256": "70ef47aeab1ad5f3856d0c1d5d5ae583a0905cdea159fae9af63d81e06d65dff"
+  },
+  "training_ids_sha256": "40268e4de591d9758650af5a0b8d20de7d1b6d3e311ab3da943f8e3d72747f7d",
+  "validation_ids_sha256": "6b29b03f04a3f34a745e948a28d66572836480bef962434cb86980aa8b4a7dcf",
+  "fitted_configuration": {
+    "candidate": "logistic_char",
+    "group": "ml",
+    "kind": "classical",
+    "cv_f1": 0.9647023079547156,
+    "training_seconds": 135.4624296030015,
+    "parameters": {
+      "features__ngram_range": [
+        2,
+        4
+      ],
+      "features__min_df": 2,
+      "classifier__class_weight": "balanced",
+      "classifier__C": 100.0
+    },
+    "probabilities": true,
+    "thresholds": {
+      "primary": {
+        "threshold": 0.29259287495765274,
+        "f1": 0.9689922480620154,
+        "precision": 0.984251968503937,
+        "recall": 0.9541984732824428,
+        "predicted_spam": 127
+      },
+      "high_precision": {
+        "threshold": 0.29259287495765274,
+        "f1": 0.9689922480620154,
+        "precision": 0.984251968503937,
+        "recall": 0.9541984732824428,
+        "predicted_spam": 127
+      },
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "validation": {
+      "attempted": 1035,
+      "completed": 1035,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 0.9922705314009662,
+      "accuracy": 0.9922705314009662,
+      "spam_f1": 0.9689922480620154,
+      "macro_f1": 0.9822886185122439,
+      "precision": 0.984251968503937,
+      "recall": 0.9541984732824428,
+      "false_positive_rate": 0.0022123893805309734,
+      "tn": 902,
+      "fp": 2,
+      "fn": 6,
+      "tp": 125,
+      "ham_support": 904,
+      "spam_support": 131,
+      "average_precision": 0.9873847302560973,
+      "brier": 0.009062455334681873,
+      "log_loss": 0.036952390156271844
+    },
+    "artifact_bytes": 257734
+  },
+  "note": "Descriptive release provenance added after evaluation; the selected artifact and operating threshold are unchanged."
+}

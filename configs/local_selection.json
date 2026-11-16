@@ -1,0 +1,7 @@
+{
+  "candidate": "logistic_char",
+  "kind": "classical",
+  "artifact": "artifacts/release/model.joblib",
+  "sha256": "3c2f3ded80b47df84bbe3d380304aa1a8c67ddaefcc5b2226013028cba6d53e3",
+  "selection_basis": "validation spam F1, then precision; frozen before test evaluation"
+}

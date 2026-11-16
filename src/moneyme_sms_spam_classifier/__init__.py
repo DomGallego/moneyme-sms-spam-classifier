@@ -1,2 +1,1 @@
-def main() -> None:
-    print("Hello from moneyme-sms-spam-classifier!")
+"""SMS spam classification: reproducible experiments and shared inference."""
