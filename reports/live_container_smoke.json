@@ -1,0 +1,29 @@
+{
+  "routes": {
+    "ml": {
+      "status": 200,
+      "response": {
+        "label": "ham"
+      }
+    },
+    "llm": {
+      "status": 200,
+      "response": {
+        "label": "ham"
+      }
+    },
+    "decision": {
+      "status": 200,
+      "response": {
+        "label": "ham"
+      }
+    }
+  },
+  "cap_usd": 10.0,
+  "shared_ledger": "reports/budget.sqlite",
+  "openapi_status": 200,
+  "service_attempts": 4,
+  "service_reported_usd": 0.0026745,
+  "service_accounted_usd": 0.0026745,
+  "image": "sha256:5e68e583e1dadcd930c1e9797cd4d78cf8c780455d37cd85400cc5ea189a5447"
+}

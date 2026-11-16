@@ -1,0 +1,20 @@
+{
+  "observed_blocking_locations": [
+    "dxgvmb_send_sync_msg",
+    "dxgglobal_acquire_process_adapter_lock"
+  ],
+  "underlying_driver_root_cause": "Not established; no driver crash dump was collected.",
+  "cuda_out_of_memory_exception_observed": false,
+  "optimizer_source_observation": "Installed PyTorch 2.15.0 Adam.step calls _accelerator_graph_capture_health_check, which queries torch.accelerator.current_accelerator(check_available=True), even when parameters are on CPU.",
+  "cpu_probe_correction": "Forward/backward alone did not exercise optimizer initialization. The isolated CPU-only build passed three full forward/backward/optimizer steps and completed real training epochs.",
+  "mitigations": [
+    "Official xgboost-cpu 3.4.1 for numeric pipelines.",
+    "Isolated official torch 2.15.0+cpu for the matched 5e-5 encoder pair and final CPU evaluation."
+  ],
+  "retained_encoder_backends": {
+    "head_0.001": "CUDA/float16 autocast, both treatments",
+    "full_2e-05": "CUDA/float16 autocast, both treatments",
+    "full_5e-05": "CPU/float32, dynamic padding and length-grouped batches, both treatments"
+  },
+  "data_and_selection_policy": "Original validation/test records and existing serving selections remain frozen. Runtime observations did not determine test-based model selection."
+}

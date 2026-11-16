@@ -1,0 +1,16 @@
+{
+  "expected_configurations": 60,
+  "validation_complete": 60,
+  "test_complete": 60,
+  "complete": true,
+  "generation": {
+    "requests": 472,
+    "accepted": 2550,
+    "rejected": 124,
+    "covered_parents": 382,
+    "pool_sha256": "569f43ba3c4ea7a1f2f373d87ec9b031a8cc0cc67c0935d686ff59d4a370a4cc",
+    "accounted_total_usd": 5.274930442014,
+    "configuration_id": "5a9c199b94595bb361a7c0c116d528d0bd24956a5c04b67614731798a85a2628"
+  },
+  "evaluation_scope": "Exploratory comparison on an existing, previously inspected test set. No fresh independent generalization claim."
+}

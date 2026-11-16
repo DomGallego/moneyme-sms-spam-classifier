@@ -1,0 +1,69 @@
+{
+  "status": "Complete: 60 configurations trained/evaluated, Docker checks passed, reports and executed notebook verified.",
+  "pool_frozen": {
+    "pool_sha256": "569f43ba3c4ea7a1f2f373d87ec9b031a8cc0cc67c0935d686ff59d4a370a4cc",
+    "rows": 2550,
+    "generation_configuration_id": "5a9c199b94595bb361a7c0c116d528d0bd24956a5c04b67614731798a85a2628",
+    "duplicate_filter": "Normalized exact-match exclusion against all original corpus messages; no evaluation messages sent to generator.",
+    "note": "Enough accepted variants for full-training balance and every CV fitting partition; generation complete."
+  },
+  "accounted_usd": 5.274930442014,
+  "numeric_completed": [
+    "forest_engineered__original",
+    "svm_word__smote",
+    "svm_word__original",
+    "mnb_word__original",
+    "logistic_char__smote",
+    "cnb_word__smote",
+    "logistic_char__original",
+    "logistic_combined__smote",
+    "mnb_counts__original",
+    "mnb_counts__smote",
+    "forest_engineered__smote",
+    "mnb_word__smote",
+    "ridge_word__original",
+    "logistic_combined__original",
+    "svm_char__original",
+    "svm_combined__smote",
+    "ridge_word__smote",
+    "svm_char__smote",
+    "cnb_word__original",
+    "logistic_word__original",
+    "svm_combined__original",
+    "logistic_engineered__original",
+    "logistic_engineered__smote",
+    "logistic_word__smote"
+  ],
+  "encoder_checkpoints": "All 3 original-data configurations completed 3 epochs; first 2 persisted validation results. recover_encoder_checkpoints restores metadata and the third checkpoint without retraining.",
+  "tests": "25 passed before reporting/recovery helper edits; rerun full suite at final verification.",
+  "resume": "OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 .venv/bin/python scripts/cpu_runtime.py scripts/complete_ml_benchmark.py",
+  "next_steps": [],
+  "notes": [
+    "Hosted classifier configurations/results and serving release are preserved by hashes.",
+    "Old original/SMOTE/GPU jobs were sent termination signals; kernel-blocked jobs need WSL shutdown to disappear.",
+    "CPU-only XGBoost avoids GPU-driver discovery; previous GPU-enabled XGBoost CPU fit also stalled in dxgvmb.",
+    "Do not issue more augmentation calls: 2550 accepted records cover all fitting quotas.",
+    "Documentation should describe final design directly, while retaining accurate execution and evaluation provenance.",
+    "Primary CUDA-enabled PyTorch CPU optimizer health-check also waited in dxgvmb; isolated official CPU-only PyTorch avoids all CUDA runtime calls."
+  ],
+  "run_log": ".cache/logs/ml-benchmark.log",
+  "run_logs": [
+    ".cache/logs/ml-final-verification.log"
+  ],
+  "coordinator": "The original coordinator was terminated because it waited for a kernel-blocked GPU child. The independent numeric worker continues. Do not start duplicate fitting while either worker is active.",
+  "training_complete": 60,
+  "test_complete_at_status_update": 60,
+  "freeze_note": "Only inference_policy metadata differed between first freeze and evaluate, before any treatment test predictions. Prior snapshot retained and exact field-only amendment recorded in snapshot_metadata_audit.json. Test evaluation has now started; do not change the frozen definition.",
+  "final_audit": {
+    "models_trained": 60,
+    "models_tested": 60,
+    "combined_comparison_rows": 75,
+    "tests_passed": 27,
+    "executed_notebook_cells": 10,
+    "notebook_errors": 0,
+    "preserved_artifact_hashes": "passed",
+    "augmentation_fold_isolation": "passed",
+    "git_visible_secret_scan": "passed",
+    "largest_visible_file_limit": "passed"
+  }
+}

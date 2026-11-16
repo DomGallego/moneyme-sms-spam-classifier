@@ -1,0 +1,10 @@
+{
+  "previous_snapshot_sha256": "ca841e5df8700531407412882da975207527095162d620ba90adb7e8db6d6ce3",
+  "current_snapshot_sha256": "30186a2fa7e103f57793b39d789f26717b7d42936ff1b8c70e707bd884bb2a68",
+  "changed_fields": [
+    "inference_policy"
+  ],
+  "model_weights_thresholds_and_selections_unchanged": true,
+  "treatment_test_records_before_amendment": 0,
+  "reason": "Inference-thread scope metadata was finalized between automated freeze and evaluation. Prior snapshot retained; no treatment test predictions had been computed."
+}

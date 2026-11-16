@@ -1,0 +1,28 @@
+{
+  "health": "passed",
+  "local_prediction": {
+    "label": "ham"
+  },
+  "hosted_disabled": "passed",
+  "sample_client": "passed",
+  "build_seconds": 9.550091326000256,
+  "startup_seconds": 4.652610114000709,
+  "http_warm_p50_ms": 3.1583519994455855,
+  "http_warm_p95_ms": 4.655060150253121,
+  "sequential_requests": 100,
+  "concurrency": 1,
+  "timing_note": "Two smoke-test SMS, warm HTTP connections; not a workload benchmark.",
+  "image": "sha256:cedad6d282a8a8eeb3a12b9d1444f2ea6df5e5b917fa8099f80921e599a49897",
+  "runtime_uid": 10001,
+  "container_resources": {
+    "BlockIO": "168kB / 0B",
+    "CPUPerc": "0.15%",
+    "Container": "moneyme-sms-smoke",
+    "ID": "06afb86fac16",
+    "MemPerc": "1.07%",
+    "MemUsage": "126.8MiB / 11.59GiB",
+    "Name": "moneyme-sms-smoke",
+    "NetIO": "47.5kB / 34.7kB",
+    "PIDs": "2"
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "health": "passed",
+  "local_prediction": {
+    "label": "ham"
+  },
+  "hosted_disabled": "passed",
+  "sample_client": "passed",
+  "build_seconds": 1.5686295240011532,
+  "startup_seconds": 3.516188162000617,
+  "http_warm_p50_ms": 3.2238509993476328,
+  "http_warm_p95_ms": 4.542960300022969,
+  "sequential_requests": 100,
+  "concurrency": 1,
+  "timing_note": "Two smoke-test SMS, warm HTTP connections; not a workload benchmark.",
+  "image": "sha256:e42480cf07fc82f7e67f1f516528b8f94d17f16c93d3048e1e2aa23c8cc04130",
+  "runtime_uid": 10001,
+  "container_resources": {
+    "BlockIO": "0B / 0B",
+    "CPUPerc": "0.15%",
+    "Container": "moneyme-sms-smoke",
+    "ID": "9b5a69900bfb",
+    "MemPerc": "1.07%",
+    "MemUsage": "127MiB / 11.59GiB",
+    "Name": "moneyme-sms-smoke",
+    "NetIO": "47.1kB / 34.4kB",
+    "PIDs": "2"
+  },
+  "git_visible_files_copied": 939,
+  "secrets_present": false,
+  "raw_dataset_present": false,
+  "note": "Uncommitted working tree mirrored using Git-visible paths, not a committed clone."
+}

@@ -1,0 +1,64 @@
+{
+  "created_at": "2026-11-16T11:21:38.465205+00:00",
+  "git_commit": "e0d4d68c755d93eff13d2645e6ccb8d2e9ed71bd",
+  "dirty": true,
+  "python": "3.12.3",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "httpx": "0.28.1",
+    "fastapi": "0.163.1"
+  },
+  "source_hashes": {
+    "src/moneyme_sms_spam_classifier/__init__.py": "82f9d0c27f5de8305f058aee7214fbc39e035b2da078123b35dee2a9fb8355fc",
+    "src/moneyme_sms_spam_classifier/api.py": "24e96f5c83ae67b71c03d4f2c4425b90155dabadf48ad02d5f89a17241676231",
+    "src/moneyme_sms_spam_classifier/augmentation.py": "2e28a0f36ba6fe5c0abca067530830280c296753ba88f231848e9cd2e3f7e02b",
+    "src/moneyme_sms_spam_classifier/cli.py": "1bec697b1a9ef5642d63369b91991cd434bed112335f3c32fb1236ac107e1588",
+    "src/moneyme_sms_spam_classifier/common.py": "fc40f8a042d1935f8217c6e6d1fbb9f57651b288dce81a930094f4e9b7b4c2af",
+    "src/moneyme_sms_spam_classifier/data.py": "842480d5b9d68759923e38177ac57b760f2c34d3dad5c2c0c312c11e914ed7a0",
+    "src/moneyme_sms_spam_classifier/evaluation.py": "bdb017b8682bc7eb54acf86b24ebd59b129e42489e50d40c90ee34b12f1bef30",
+    "src/moneyme_sms_spam_classifier/experiments.py": "587e3b397481a1e2b1de9cf90a45ab1588c26a3a2c69c66601c93ea4a9671a40",
+    "src/moneyme_sms_spam_classifier/features.py": "ff744b22e6bac31b6cd2df7ada624b7121e572258d78d64d9cc397b166540a40",
+    "src/moneyme_sms_spam_classifier/hosted.py": "47dca484e4376d3048e4cf614604c5017069d2160ee6657c0790cce3f6449092",
+    "src/moneyme_sms_spam_classifier/imbalance.py": "4c17ef885d341c273988ee296f0c59d91891c3846f9371407f0c7ecbf6efc58d",
+    "src/moneyme_sms_spam_classifier/inference.py": "9787805e4ffe7f9b9902af0c8e4d886692694c4d68c4289e69d76c934bd0c3ff",
+    "src/moneyme_sms_spam_classifier/reporting.py": "e2f18c31b0418d2682f3e0f73c698f8f932173d94875067e92a0501c399155ba",
+    "src/moneyme_sms_spam_classifier/sampling.py": "dc0e8e141666b23618c528f7db863fbc8851a607a2d75b22fa8ccdf2cdc195b9",
+    "src/moneyme_sms_spam_classifier/semantic.py": "54375800d86b210210a03c0c5b0f32d694de8d4c10ee8cc9ea66e5cdfac0889d",
+    "src/moneyme_sms_spam_classifier/training.py": "1ff508d43dd6714d1873accfbe9cc9a74dbfe0604192fb034ba74a33585d0f05"
+  },
+  "definition": {
+    "config": {
+      "model": "openai/gpt-6-luna",
+      "prompt": "prompts/spam_augmentation_v1.txt",
+      "variants_per_request": 6,
+      "max_tokens": 3072,
+      "generation_temperature": 0.7,
+      "seed": 42,
+      "sampling_strategy": 1.0,
+      "smote_neighbors": 5,
+      "search_trials": 20,
+      "cv_folds": 5,
+      "jobs": 2,
+      "treatments": [
+        "original",
+        "text_aug",
+        "smote"
+      ],
+      "evaluation_scope": "Exploratory comparison on an existing, previously inspected test set. No fresh independent generalization claim.",
+      "selection": "Validation F1; existing release artifacts remain separately frozen."
+    },
+    "dataset_sha256": "70ef47aeab1ad5f3856d0c1d5d5ae583a0905cdea159fae9af63d81e06d65dff"
+  },
+  "release_selection": {
+    "candidate": "logistic_char",
+    "kind": "classical",
+    "artifact": "artifacts/release/model.joblib",
+    "sha256": "3c2f3ded80b47df84bbe3d380304aa1a8c67ddaefcc5b2226013028cba6d53e3",
+    "selection_basis": "validation spam F1, then precision; frozen before test evaluation"
+  },
+  "evaluation_scope": "Exploratory comparison on an existing, previously inspected test set. No fresh independent generalization claim.",
+  "baseline_protocol": "Equal 20-trial searches for all numeric treatments; historical refinements are separate evidence."
+}

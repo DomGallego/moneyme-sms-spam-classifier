@@ -1,0 +1,15 @@
+candidate,coverage,interval_scope,f1_ci_low,f1_ci_high,bootstrap_repetitions,unit
+openai/gpt-6-luna,1.0,F1 conditional on successful responses,0.9137780207763806,0.9724960053822219,500,template family
+anthropic/claude-haiku-5.5,1.0,F1 conditional on successful responses,0.7848460608646189,0.882069993722536,500,template family
+qwen/qwen3.8-flash,1.0,F1 conditional on successful responses,0.8945090409704738,0.9555128205128205,500,template family
+google/gemini-4-hydrogen,1.0,F1 conditional on successful responses,0.9323255696966648,0.9800775039745627,500,template family
+openai/gpt-6.1-sol,1.0,F1 conditional on successful responses,0.9315015788344216,0.980705285916648,500,template family
+deepseek/deepseek-v4.1-flash-1017,1.0,F1 conditional on successful responses,0.8674998171579025,0.9392321282957325,500,template family
+meta/muse-ember,1.0,F1 conditional on successful responses,0.9182333075353549,0.9722819472616633,500,template family
+typesafe/jev-1.14,1.0,F1 conditional on successful responses,0.8993315508021391,0.9590892481958527,500,template family
+perplexity/pplx-decider-v1.3:free,1.0,F1 conditional on successful responses,0.9737929061784898,1.0,500,template family
+nace-ai/drex-v2.0,0.9564796905222437,F1 conditional on successful responses,0.8795973707408685,0.9513372491434166,500,template family
+liquid/d1-ultra,0.9903288201160542,F1 conditional on successful responses,0.9150679641643497,0.9713247769919532,500,template family
+google/gemini-decision-1,0.9980657640232108,F1 conditional on successful responses,0.8904772052176159,0.9516997820792206,500,template family
+openai/gpt-6-luna-decisions,0.9980657640232108,F1 conditional on successful responses,0.89615624860572,0.9606157994575697,500,template family
+microsoft/microsoft-decision-1,1.0,F1 conditional on successful responses,0.9345812029580216,0.9832026559299286,500,template family

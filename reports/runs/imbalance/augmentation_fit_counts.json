@@ -1,0 +1,50 @@
+{
+  "full": {
+    "original_rows": 3102,
+    "fitted_rows": 5420,
+    "class_counts": {
+      "0": 2710,
+      "1": 2710
+    }
+  },
+  "fold_0": {
+    "original_rows": 2481,
+    "fitted_rows": 4336,
+    "class_counts": {
+      "0": 2168,
+      "1": 2168
+    }
+  },
+  "fold_1": {
+    "original_rows": 2482,
+    "fitted_rows": 4336,
+    "class_counts": {
+      "0": 2168,
+      "1": 2168
+    }
+  },
+  "fold_2": {
+    "original_rows": 2482,
+    "fitted_rows": 4336,
+    "class_counts": {
+      "0": 2168,
+      "1": 2168
+    }
+  },
+  "fold_3": {
+    "original_rows": 2482,
+    "fitted_rows": 4336,
+    "class_counts": {
+      "0": 2168,
+      "1": 2168
+    }
+  },
+  "fold_4": {
+    "original_rows": 2481,
+    "fitted_rows": 4336,
+    "class_counts": {
+      "0": 2168,
+      "1": 2168
+    }
+  }
+}

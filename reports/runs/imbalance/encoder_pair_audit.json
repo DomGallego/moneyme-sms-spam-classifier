@@ -1,0 +1,44 @@
+{
+  "distilbert_full_2e-05": {
+    "original": {
+      "device": "cuda",
+      "precision": "autocast_float16",
+      "dynamic_padding": false,
+      "length_grouped_batches": false
+    },
+    "text_aug": {
+      "device": "cuda",
+      "precision": "autocast_float16",
+      "dynamic_padding": false,
+      "length_grouped_batches": false
+    }
+  },
+  "distilbert_full_5e-05": {
+    "original": {
+      "device": "cpu",
+      "precision": "float32",
+      "dynamic_padding": true,
+      "length_grouped_batches": true
+    },
+    "text_aug": {
+      "device": "cpu",
+      "precision": "float32",
+      "dynamic_padding": true,
+      "length_grouped_batches": true
+    }
+  },
+  "distilbert_head_0.001": {
+    "original": {
+      "device": "cuda",
+      "precision": "autocast_float16",
+      "dynamic_padding": false,
+      "length_grouped_batches": false
+    },
+    "text_aug": {
+      "device": "cuda",
+      "precision": "autocast_float16",
+      "dynamic_padding": false,
+      "length_grouped_batches": false
+    }
+  }
+}

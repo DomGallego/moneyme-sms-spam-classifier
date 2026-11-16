@@ -1,0 +1,8 @@
+{
+  "authorized_total_usd": 5,
+  "pilot_cap_usd": 1,
+  "pilot_accounted_usd": 0.47544999259,
+  "development_96_all_variants_estimate_usd": 0.41492504063999996,
+  "validation_and_test_single_variant_estimate_usd": 4.471249526479999,
+  "note": "Pilot-based estimate only; final variants, reasoning and caches can change charges. Hard cumulative cap remains $5."
+}

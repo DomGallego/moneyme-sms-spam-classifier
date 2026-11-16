@@ -1,0 +1,4 @@
+left,right,common_successes,common_success_coverage,delta_f1_left_minus_right,ci_low,ci_high,bootstrap_repetitions,unit,note
+ml,llm,1034,1.0,0.007905138339920903,-0.011183580173827073,0.025207016877751547,500,template family,Exploratory paired intervals; no multiple-comparison correction.
+ml,decision,1034,1.0,-0.023899970778671564,-0.04347725380378732,-0.005717368823986541,500,template family,Exploratory paired intervals; no multiple-comparison correction.
+llm,decision,1034,1.0,-0.03180510911859247,-0.05194146070303289,-0.011625334125334121,500,template family,Exploratory paired intervals; no multiple-comparison correction.

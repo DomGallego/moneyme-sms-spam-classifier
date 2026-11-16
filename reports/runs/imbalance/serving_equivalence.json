@@ -1,0 +1,8 @@
+{
+  "candidate": "logistic_char__original",
+  "scope": "Original validation predictions only",
+  "same_ids": true,
+  "identical_predictions": true,
+  "scores_match": true,
+  "same_selected_parameters": true
+}

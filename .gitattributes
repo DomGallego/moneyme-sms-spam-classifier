@@ -1,0 +1,2 @@
+# Preserve original SMS trailing spaces in error-analysis CSV fields.
+reports/*errors.csv whitespace=-blank-at-eol
