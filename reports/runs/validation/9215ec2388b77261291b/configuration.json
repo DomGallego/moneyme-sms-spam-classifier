@@ -1,0 +1,7 @@
+{
+  "group": "decision",
+  "model": "google/gemini-decision-1",
+  "variant": "noul",
+  "primitive": "noul",
+  "threshold": 0.6498742694065037
+}

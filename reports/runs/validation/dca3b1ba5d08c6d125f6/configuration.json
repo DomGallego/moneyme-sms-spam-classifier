@@ -1,0 +1,7 @@
+{
+  "group": "decision",
+  "model": "typesafe/jev-1.14",
+  "variant": "noul",
+  "primitive": "noul",
+  "threshold": 0.94
+}

@@ -1,0 +1,43 @@
+{
+  "candidate": "openai/gpt-6.1-sol",
+  "group": "llm",
+  "variant": "zero_shot",
+  "configuration_id": "4d0d6c3d6804e8a80a6e",
+  "configuration": {
+    "group": "llm",
+    "model": "openai/gpt-6.1-sol",
+    "variant": "zero_shot",
+    "max_tokens": 2048,
+    "examples": []
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9884057971014493,
+    "accuracy": 0.9884057971014493,
+    "spam_f1": 0.952755905511811,
+    "macro_f1": 0.9730739879981962,
+    "precision": 0.983739837398374,
+    "recall": 0.9236641221374046,
+    "false_positive_rate": 0.0022123893805309734,
+    "tn": 902,
+    "fp": 2,
+    "fn": 10,
+    "tp": 121,
+    "ham_support": 904,
+    "spam_support": 131
+  },
+  "latency": {
+    "p50_ms": 1926.2316059998739,
+    "p95_ms": 2941.732808500046,
+    "mean_ms": 2061.706857528501,
+    "count": 1035
+  },
+  "cost_usd": 0.493402,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1035,
+  "stage": "validation"
+}

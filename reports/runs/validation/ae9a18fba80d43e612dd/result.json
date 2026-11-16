@@ -1,0 +1,64 @@
+{
+  "candidate": "liquid/d1-ultra",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "ae9a18fba80d43e612dd",
+  "configuration": {
+    "group": "decision",
+    "model": "liquid/d1-ultra",
+    "variant": "choice",
+    "primitive": "choice",
+    "threshold": 0.5246623165651004
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.7913111224201902,
+      "f1": 0.9575289575289575,
+      "precision": 0.96875,
+      "recall": 0.9465648854961832,
+      "predicted_spam": 128
+    },
+    "high_precision": {
+      "threshold": 0.8491262261429207,
+      "f1": 0.9444444444444444,
+      "precision": 0.9834710743801653,
+      "recall": 0.9083969465648855,
+      "predicted_spam": 121
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9893719806763285,
+    "accuracy": 0.9893719806763285,
+    "spam_f1": 0.9575289575289575,
+    "macro_f1": 0.9757274826297466,
+    "precision": 0.96875,
+    "recall": 0.9465648854961832,
+    "false_positive_rate": 0.004424778761061947,
+    "tn": 900,
+    "fp": 4,
+    "fn": 7,
+    "tp": 124,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.9863013820253534,
+    "brier": 0.025947850743511476,
+    "log_loss": 0.10664653971075866
+  },
+  "latency": {
+    "p50_ms": 946.1129739997887,
+    "p95_ms": 2382.9526597999557,
+    "mean_ms": 1147.8721268898523,
+    "count": 1035
+  },
+  "cost_usd": 0.005419218,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1035,
+  "stage": "validation"
+}

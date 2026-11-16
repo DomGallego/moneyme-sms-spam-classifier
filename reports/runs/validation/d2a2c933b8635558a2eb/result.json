@@ -1,0 +1,64 @@
+{
+  "candidate": "microsoft/microsoft-decision-1",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "d2a2c933b8635558a2eb",
+  "configuration": {
+    "group": "decision",
+    "model": "microsoft/microsoft-decision-1",
+    "variant": "noul",
+    "primitive": "noul",
+    "threshold": 0.3486497622900371
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.6791819705730426,
+      "f1": 0.9692307692307692,
+      "precision": 0.9767441860465116,
+      "recall": 0.9618320610687023,
+      "predicted_spam": 129
+    },
+    "high_precision": {
+      "threshold": 0.7549171534460425,
+      "f1": 0.9689922480620154,
+      "precision": 0.984251968503937,
+      "recall": 0.9541984732824428,
+      "predicted_spam": 127
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9922705314009662,
+    "accuracy": 0.9922705314009662,
+    "spam_f1": 0.9692307692307692,
+    "macro_f1": 0.9824054398640034,
+    "precision": 0.9767441860465116,
+    "recall": 0.9618320610687023,
+    "false_positive_rate": 0.00331858407079646,
+    "tn": 901,
+    "fp": 3,
+    "fn": 5,
+    "tp": 126,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.9905206939207235,
+    "brier": 0.007597358390259709,
+    "log_loss": 0.029898576176734182
+  },
+  "latency": {
+    "p50_ms": 532.5827599999684,
+    "p95_ms": 627.7967842001544,
+    "mean_ms": 551.2894223739227,
+    "count": 1035
+  },
+  "cost_usd": 0.005342105999999999,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1035,
+  "stage": "validation"
+}

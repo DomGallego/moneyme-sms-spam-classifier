@@ -1,0 +1,7 @@
+{
+  "group": "decision",
+  "model": "microsoft/microsoft-decision-1",
+  "variant": "noul",
+  "primitive": "noul",
+  "threshold": 0.3486497622900371
+}

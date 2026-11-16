@@ -1,0 +1,7 @@
+{
+  "group": "decision",
+  "model": "openai/gpt-6-luna-decisions",
+  "variant": "choice",
+  "primitive": "choice",
+  "threshold": 0.82
+}

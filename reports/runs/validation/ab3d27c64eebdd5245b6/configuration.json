@@ -1,0 +1,7 @@
+{
+  "group": "llm",
+  "model": "deepseek/deepseek-v4.1-flash-1017",
+  "variant": "zero_shot",
+  "max_tokens": 2048,
+  "examples": []
+}
