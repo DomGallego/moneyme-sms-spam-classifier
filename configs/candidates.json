@@ -1,0 +1,12 @@
+{
+  "llm": [
+    "openai/gpt-6-luna", "anthropic/claude-haiku-5.5", "qwen/qwen3.8-flash",
+    "google/gemini-4-hydrogen", "openai/gpt-6.1-sol",
+    "deepseek/deepseek-v4.1-flash-1017", "meta/muse-ember"
+  ],
+  "decision": [
+    "typesafe/jev-1.14", "perplexity/pplx-decider-v1.3:free", "nace-ai/drex-v2.0",
+    "liquid/d1-ultra", "google/gemini-decision-1", "openai/gpt-6-luna-decisions",
+    "microsoft/microsoft-decision-1"
+  ]
+}

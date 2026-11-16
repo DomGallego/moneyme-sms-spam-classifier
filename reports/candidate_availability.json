@@ -1,0 +1,305 @@
+{
+  "llm": {
+    "openai/gpt-6-luna": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.00000001",
+        "input_cache_write": "0.000000125",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.0000002",
+            "completion": "0.00000075",
+            "input_cache_read": "0.00000002",
+            "input_cache_write": "0.00000025"
+          }
+        ]
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "none"
+        ],
+        "default_effort": "medium"
+      }
+    },
+    "anthropic/claude-haiku-5.5": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000005",
+        "web_search": "0.01",
+        "input_cache_read": "0.00000001",
+        "input_cache_write": "0.000000125",
+        "input_cache_write_1h": "0.0000002",
+        "overrides": [
+          {
+            "min_prompt_tokens": 100000,
+            "prompt": "0.0000005",
+            "completion": "0.0000025",
+            "input_cache_read": "0.00000005",
+            "input_cache_write": "0.000000625",
+            "input_cache_write_1h": "0.000001"
+          }
+        ]
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "none"
+        ],
+        "default_effort": "medium"
+      }
+    },
+    "qwen/qwen3.8-flash": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.00000015",
+        "completion": "0.00000047",
+        "input_cache_read": "0.000000016"
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supports_max_tokens": true
+      }
+    },
+    "google/gemini-4-hydrogen": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.0000015",
+        "completion": "0.0000075",
+        "image": "0.0000015",
+        "audio": "0.0000015",
+        "input_audio_cache": "0.000000075",
+        "web_search": "0.014",
+        "internal_reasoning": "0.0000075",
+        "input_cache_read": "0.000000075",
+        "input_cache_write": "0.0000000833333333333333"
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": true,
+        "supported_efforts": [
+          "xhigh",
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
+      }
+    },
+    "openai/gpt-6.1-sol": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.000002",
+        "completion": "0.00001",
+        "web_search": "0.01",
+        "input_cache_read": "0.0000001",
+        "input_cache_write": "0.0000025",
+        "overrides": [
+          {
+            "min_prompt_tokens": 272000,
+            "prompt": "0.000004",
+            "completion": "0.000015",
+            "input_cache_read": "0.0000002",
+            "input_cache_write": "0.000005"
+          }
+        ]
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": true,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low"
+        ],
+        "default_effort": "medium"
+      }
+    },
+    "deepseek/deepseek-v4.1-flash-1017": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.00000002",
+        "completion": "0.000000108",
+        "input_cache_read": "0.000000007"
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": false,
+        "default_enabled": true,
+        "supported_efforts": [
+          "max",
+          "high",
+          "low",
+          "none"
+        ],
+        "default_effort": "high"
+      }
+    },
+    "meta/muse-ember": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0.0000005",
+        "web_search": "0.0025",
+        "input_cache_read": "0.000000004",
+        "input_cache_write": "0.000000125"
+      },
+      "endpoints": [
+        "/api/v1/chat/completions",
+        "/api/v1/completions",
+        "/api/v1/messages",
+        "/api/v1/responses"
+      ],
+      "reasoning": {
+        "mandatory": true,
+        "supported_efforts": [
+          "max",
+          "xhigh",
+          "high",
+          "medium",
+          "low",
+          "minimal"
+        ],
+        "default_effort": "max"
+      }
+    }
+  },
+  "decision": {
+    "typesafe/jev-1.14": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.000000042",
+        "completion": "0"
+      },
+      "endpoints": [
+        "/api/alpha/decisions"
+      ],
+      "reasoning": null
+    },
+    "perplexity/pplx-decider-v1.3:free": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0",
+        "completion": "0"
+      },
+      "endpoints": [
+        "/api/alpha/decisions",
+        "/api/alpha/extractions"
+      ],
+      "reasoning": null
+    },
+    "nace-ai/drex-v2.0": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.00000006",
+        "completion": "0"
+      },
+      "endpoints": [
+        "/api/alpha/decisions"
+      ],
+      "reasoning": null
+    },
+    "liquid/d1-ultra": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.000000042",
+        "completion": "0",
+        "input_cache_read": "0.000000042"
+      },
+      "endpoints": [
+        "/api/alpha/decisions"
+      ],
+      "reasoning": null
+    },
+    "google/gemini-decision-1": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0",
+        "web_search": "0.014"
+      },
+      "endpoints": [
+        "/api/alpha/decisions"
+      ],
+      "reasoning": null
+    },
+    "openai/gpt-6-luna-decisions": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.0000001",
+        "completion": "0",
+        "web_search": "0.01",
+        "input_cache_read": "0",
+        "input_cache_write": "0"
+      },
+      "endpoints": [
+        "/api/alpha/decisions"
+      ],
+      "reasoning": null
+    },
+    "microsoft/microsoft-decision-1": {
+      "listed": true,
+      "pricing": {
+        "prompt": "0.000000042",
+        "completion": "0"
+      },
+      "endpoints": [
+        "/api/alpha/decisions"
+      ],
+      "reasoning": null
+    }
+  }
+}
