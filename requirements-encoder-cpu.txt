@@ -1,0 +1,4 @@
+# Optional isolated runtime; use with --target .cache/cpu_torch --no-deps.
+# Other dependencies come from the locked analysis environment.
+--index-url https://download.pytorch.org/whl/cpu
+torch==2.15.0+cpu

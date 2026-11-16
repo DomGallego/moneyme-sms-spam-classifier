@@ -8,3 +8,35 @@ wheels/
 
 # Virtual environments
 .venv
+
+# Personal assessment notes and downloaded source data
+questions_dump.txt
+tasks.txt
+assessment_guide.md
+data/
+plan.md
+
+# Local run orchestration helpers
+scripts/pilot.py
+scripts/finish_run.py
+
+# Credentials and environment variants; keep the public template
+.env
+.env.*
+!.env.example
+
+# Local caches, credentials and large reproducible checkpoints
+.cache/
+.pytest_cache/
+.ruff_cache/
+.ipynb_checkpoints/
+artifacts/models/*/model.joblib
+artifacts/models/*/checkpoint/
+artifacts/splits/embeddings.npy
+reports/*.sqlite*
+reports/runs/pilot_sandbox_network_failure/
+reports/runs/imbalance/encoder/*/tmp*
+artifacts/imbalance/models/*/model.joblib
+artifacts/imbalance/models/*/checkpoint/
+artifacts/imbalance/embeddings/vectors.npy
+artifacts/imbalance/gpu_archive/
