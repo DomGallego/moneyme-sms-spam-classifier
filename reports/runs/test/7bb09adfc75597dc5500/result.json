@@ -1,0 +1,46 @@
+{
+  "candidate": "microsoft/microsoft-decision-1",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "7bb09adfc75597dc5500",
+  "configuration": {
+    "group": "decision",
+    "model": "microsoft/microsoft-decision-1",
+    "variant": "noul",
+    "primitive": "noul",
+    "threshold": 0.6791819705730426
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9903288201160542,
+    "accuracy": 0.9903288201160542,
+    "spam_f1": 0.9603174603174603,
+    "macro_f1": 0.9774054261939724,
+    "precision": 0.9918032786885246,
+    "recall": 0.9307692307692308,
+    "false_positive_rate": 0.0011061946902654867,
+    "tn": 903,
+    "fp": 1,
+    "fn": 9,
+    "tp": 121,
+    "ham_support": 904,
+    "spam_support": 130,
+    "average_precision": 0.9828413602340955,
+    "brier": 0.007882530784476474,
+    "log_loss": 0.03657830249541397
+  },
+  "latency": {
+    "p50_ms": 550.2388499999142,
+    "p95_ms": 633.3588993501961,
+    "mean_ms": 564.2682983936285,
+    "count": 1034
+  },
+  "cost_usd": 0.005320224,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1034,
+  "stage": "test"
+}

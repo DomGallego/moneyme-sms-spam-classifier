@@ -1,0 +1,46 @@
+{
+  "candidate": "typesafe/jev-1.14",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "8550c4edb9d9ec067d43",
+  "configuration": {
+    "group": "decision",
+    "model": "typesafe/jev-1.14",
+    "variant": "noul",
+    "primitive": "noul",
+    "threshold": 0.65
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9825918762088974,
+    "accuracy": 0.9825918762088974,
+    "spam_f1": 0.9302325581395349,
+    "macro_f1": 0.9601439033791597,
+    "precision": 0.9375,
+    "recall": 0.9230769230769231,
+    "false_positive_rate": 0.008849557522123894,
+    "tn": 896,
+    "fp": 8,
+    "fn": 10,
+    "tp": 120,
+    "ham_support": 904,
+    "spam_support": 130,
+    "average_precision": 0.9758313303649014,
+    "brier": 0.016886170212765953,
+    "log_loss": 0.07930643800518344
+  },
+  "latency": {
+    "p50_ms": 466.3103549992229,
+    "p95_ms": 566.2114364502485,
+    "mean_ms": 478.0501664284341,
+    "count": 1034
+  },
+  "cost_usd": 0.016886058000000002,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1034,
+  "stage": "test"
+}

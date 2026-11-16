@@ -1,0 +1,48 @@
+{
+  "candidate": "openai/gpt-6-luna-decisions",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "d74043a3614debc78926",
+  "configuration": {
+    "group": "decision",
+    "model": "openai/gpt-6-luna-decisions",
+    "variant": "choice",
+    "primitive": "choice",
+    "threshold": 0.33
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1032,
+    "coverage": 0.9980657640232108,
+    "end_to_end_accuracy": 0.9806576402321083,
+    "accuracy": 0.9825581395348837,
+    "spam_f1": 0.9291338582677166,
+    "macro_f1": 0.9595945534432506,
+    "precision": 0.9516129032258065,
+    "recall": 0.9076923076923077,
+    "false_positive_rate": 0.0066518847006651885,
+    "tn": 896,
+    "fp": 6,
+    "fn": 12,
+    "tp": 118,
+    "ham_support": 902,
+    "spam_support": 130,
+    "average_precision": 0.9502617840184046,
+    "brier": 0.01600968992248062,
+    "log_loss": 0.07795469269816618
+  },
+  "latency": {
+    "p50_ms": 510.2276799993888,
+    "p95_ms": 577.9325084003175,
+    "mean_ms": 516.327751474855,
+    "count": 1034
+  },
+  "cost_usd": 0.019935100000000004,
+  "unknown_cost_attempts": 2,
+  "failures": {
+    "http_502": 2
+  },
+  "record_count": 1034,
+  "stage": "test"
+}

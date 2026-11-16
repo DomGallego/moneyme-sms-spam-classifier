@@ -1,0 +1,64 @@
+{
+  "candidate": "anthropic/claude-haiku-5.5",
+  "group": "llm",
+  "variant": "few_shot",
+  "configuration_id": "7e9a8091b74511b25f1a",
+  "configuration": {
+    "group": "llm",
+    "model": "anthropic/claude-haiku-5.5",
+    "variant": "few_shot",
+    "max_tokens": 2048,
+    "examples": [
+      {
+        "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+        "text": "You are a big chic. Common. Declare",
+        "label": "ham"
+      },
+      {
+        "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+        "text": "Hey happy birthday...",
+        "label": "ham"
+      },
+      {
+        "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+        "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+        "label": "spam"
+      },
+      {
+        "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+        "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+        "label": "spam"
+      }
+    ]
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9526112185686654,
+    "accuracy": 0.9526112185686654,
+    "spam_f1": 0.8361204013377926,
+    "macro_f1": 0.9042105681081275,
+    "precision": 0.7396449704142012,
+    "recall": 0.9615384615384616,
+    "false_positive_rate": 0.048672566371681415,
+    "tn": 860,
+    "fp": 44,
+    "fn": 5,
+    "tp": 125,
+    "ham_support": 904,
+    "spam_support": 130
+  },
+  "latency": {
+    "p50_ms": 1444.6392055001525,
+    "p95_ms": 2148.3810830500483,
+    "mean_ms": 1525.0866163868463,
+    "count": 1034
+  },
+  "cost_usd": 0.0727386,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1034,
+  "stage": "test"
+}

@@ -1,0 +1,46 @@
+{
+  "candidate": "perplexity/pplx-decider-v1.3:free",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "4ed312a3642dbbe2d2e3",
+  "configuration": {
+    "group": "decision",
+    "model": "perplexity/pplx-decider-v1.3:free",
+    "variant": "choice",
+    "primitive": "choice",
+    "threshold": 0.47232597942914095
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9970986460348162,
+    "accuracy": 0.9970986460348162,
+    "spam_f1": 0.9883268482490273,
+    "macro_f1": 0.9933351524514049,
+    "precision": 1.0,
+    "recall": 0.9769230769230769,
+    "false_positive_rate": 0.0,
+    "tn": 904,
+    "fp": 0,
+    "fn": 3,
+    "tp": 127,
+    "ham_support": 904,
+    "spam_support": 130,
+    "average_precision": 0.9994806442480861,
+    "brier": 0.002939312990967371,
+    "log_loss": 0.018128678803905406
+  },
+  "latency": {
+    "p50_ms": 480.365853999956,
+    "p95_ms": 960.1298039997346,
+    "mean_ms": 566.9479778384987,
+    "count": 1034
+  },
+  "cost_usd": 0.0,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1034,
+  "stage": "test"
+}

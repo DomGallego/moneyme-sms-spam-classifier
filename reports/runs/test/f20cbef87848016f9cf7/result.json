@@ -1,0 +1,48 @@
+{
+  "candidate": "google/gemini-decision-1",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "f20cbef87848016f9cf7",
+  "configuration": {
+    "group": "decision",
+    "model": "google/gemini-decision-1",
+    "variant": "noul",
+    "primitive": "noul",
+    "threshold": 0.6077975538508754
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1032,
+    "coverage": 0.9980657640232108,
+    "end_to_end_accuracy": 0.9787234042553191,
+    "accuracy": 0.9806201550387597,
+    "spam_f1": 0.9242424242424242,
+    "macro_f1": 0.9565656565656566,
+    "precision": 0.9104477611940298,
+    "recall": 0.9384615384615385,
+    "false_positive_rate": 0.013303769401330377,
+    "tn": 890,
+    "fp": 12,
+    "fn": 8,
+    "tp": 122,
+    "ham_support": 902,
+    "spam_support": 130,
+    "average_precision": 0.9787353396894813,
+    "brier": 0.018909626551009653,
+    "log_loss": 0.08497885806268933
+  },
+  "latency": {
+    "p50_ms": 619.9036914995304,
+    "p95_ms": 780.3045846500479,
+    "mean_ms": 628.6184223181734,
+    "count": 1034
+  },
+  "cost_usd": 0.0207129,
+  "unknown_cost_attempts": 2,
+  "failures": {
+    "http_400": 2
+  },
+  "record_count": 1034,
+  "stage": "test"
+}

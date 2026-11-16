@@ -1,0 +1,48 @@
+{
+  "candidate": "nace-ai/drex-v2.0",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "67a8ef40f355a7f44f7e",
+  "configuration": {
+    "group": "decision",
+    "model": "nace-ai/drex-v2.0",
+    "variant": "noul",
+    "primitive": "noul",
+    "threshold": 0.749
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 989,
+    "coverage": 0.9564796905222437,
+    "end_to_end_accuracy": 0.9381044487427466,
+    "accuracy": 0.980788675429727,
+    "spam_f1": 0.919831223628692,
+    "macro_f1": 0.9544589776960232,
+    "precision": 0.9646017699115044,
+    "recall": 0.8790322580645161,
+    "false_positive_rate": 0.004624277456647399,
+    "tn": 861,
+    "fp": 4,
+    "fn": 15,
+    "tp": 109,
+    "ham_support": 865,
+    "spam_support": 124,
+    "average_precision": 0.9780439866852865,
+    "brier": 0.015435527775530838,
+    "log_loss": 0.06437224978841144
+  },
+  "latency": {
+    "p50_ms": 600.165140000172,
+    "p95_ms": 967.6814002998524,
+    "mean_ms": 653.6961949990069,
+    "count": 1034
+  },
+  "cost_usd": 0.006518639999999999,
+  "unknown_cost_attempts": 45,
+  "failures": {
+    "http_429": 45
+  },
+  "record_count": 1034,
+  "stage": "test"
+}

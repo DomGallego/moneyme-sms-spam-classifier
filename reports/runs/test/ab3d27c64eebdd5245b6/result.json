@@ -1,0 +1,43 @@
+{
+  "candidate": "deepseek/deepseek-v4.1-flash-1017",
+  "group": "llm",
+  "variant": "zero_shot",
+  "configuration_id": "ab3d27c64eebdd5245b6",
+  "configuration": {
+    "group": "llm",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "variant": "zero_shot",
+    "max_tokens": 2048,
+    "examples": []
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9758220502901354,
+    "accuracy": 0.9758220502901354,
+    "spam_f1": 0.9056603773584906,
+    "macro_f1": 0.9458972990508482,
+    "precision": 0.8888888888888888,
+    "recall": 0.9230769230769231,
+    "false_positive_rate": 0.016592920353982302,
+    "tn": 889,
+    "fp": 15,
+    "fn": 10,
+    "tp": 120,
+    "ham_support": 904,
+    "spam_support": 130
+  },
+  "latency": {
+    "p50_ms": 616.1973284997657,
+    "p95_ms": 1335.6785123999541,
+    "mean_ms": 730.1841182911014,
+    "count": 1034
+  },
+  "cost_usd": 0.020978236152,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 1034,
+  "stage": "test"
+}

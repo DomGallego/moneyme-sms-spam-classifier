@@ -1,0 +1,211 @@
+{
+  "note": "Small diagnostic checks on validation and handwritten inputs; not a production benchmark or a tuning set.",
+  "local_handwritten": [
+    {
+      "id": "manual-personal",
+      "expected": 0,
+      "prediction": 0
+    },
+    {
+      "id": "manual-spam",
+      "expected": 1,
+      "prediction": 1
+    },
+    {
+      "id": "manual-override",
+      "expected": 1,
+      "prediction": 1
+    },
+    {
+      "id": "manual-quoted",
+      "expected": 0,
+      "prediction": 0
+    }
+  ],
+  "hosted": {
+    "llm": {
+      "stability": {
+        "0084b809ddf6278a72f13da781962d400286da8e486e41bd7a5c47314b0ee74c": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "1f4b5ea74a375c38ed8d4598942b8fa3c237e0d4c4c26dbf4f3c06fc71caf483": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "0fc6c9b459bc1ee909fff44f2aee4c84410428b26263a158c44f8b0e33809125": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "f48f9e216215ce5d8e8020c8d902d240521b5da717631355b00cef58e73b29d5": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "18803daab2fb6b303e2765905bbc97a9d9b18499a22cf699a3cd3ec2679be0cd": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "1f111c41fa47daf7dc203ec6525bd2bbc72bbf29aadab528190ced2fc01c2e92": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "280d2d234818bc65e99e8093ac46155027ea11a1afad9fdfbf672f2b3c286981": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "432f28ce5022a33db459270a2c461a88c200586583732926c4304793ac4fa2ee": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "da9d333fcca94c1e95b19e8da587f7bce608ece160fc0e3c8e38d40087eda613": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "e0b0bf7bc857d87bacd4ddd2c3022fbcefe6a96e7389fd0f049e8f2b9b054eee": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "59fd3b355dd7f41f29247dd9e7b56d33614204dd1d499a72e596185759ebc47c": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "2beb7efaab056b88bf89a7157285e63241325eaf3c46786cf547f6f624437ae7": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "908ac917da8443833b7e723f5ab566bf76a9489b2129a77f4bc9c566e27013c6": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "0e6f0280d10c74b9a4671392697c51e388c3fbd9aacd0919d82c660f6cd9d017": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "8630a14bf501c029c43cfea48ab0c15be3e655e62d0122808f4ece43c5098aae": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "6f693b850b836ca32d43434438975b3f5174e9c29987bb6f1c495b5cd1ac0f44": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        }
+      },
+      "messages_with_label_flips": 0,
+      "failures": 0,
+      "handwritten": [
+        {
+          "id": "manual-personal",
+          "expected": 0,
+          "prediction": 0
+        },
+        {
+          "id": "manual-spam",
+          "expected": 1,
+          "prediction": 1
+        },
+        {
+          "id": "manual-override",
+          "expected": 1,
+          "prediction": 1
+        },
+        {
+          "id": "manual-quoted",
+          "expected": 0,
+          "prediction": 0
+        }
+      ]
+    },
+    "decision": {
+      "stability": {
+        "0084b809ddf6278a72f13da781962d400286da8e486e41bd7a5c47314b0ee74c": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "1f4b5ea74a375c38ed8d4598942b8fa3c237e0d4c4c26dbf4f3c06fc71caf483": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "0fc6c9b459bc1ee909fff44f2aee4c84410428b26263a158c44f8b0e33809125": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "f48f9e216215ce5d8e8020c8d902d240521b5da717631355b00cef58e73b29d5": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "18803daab2fb6b303e2765905bbc97a9d9b18499a22cf699a3cd3ec2679be0cd": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "1f111c41fa47daf7dc203ec6525bd2bbc72bbf29aadab528190ced2fc01c2e92": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "280d2d234818bc65e99e8093ac46155027ea11a1afad9fdfbf672f2b3c286981": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "432f28ce5022a33db459270a2c461a88c200586583732926c4304793ac4fa2ee": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "da9d333fcca94c1e95b19e8da587f7bce608ece160fc0e3c8e38d40087eda613": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "e0b0bf7bc857d87bacd4ddd2c3022fbcefe6a96e7389fd0f049e8f2b9b054eee": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "59fd3b355dd7f41f29247dd9e7b56d33614204dd1d499a72e596185759ebc47c": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "2beb7efaab056b88bf89a7157285e63241325eaf3c46786cf547f6f624437ae7": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "908ac917da8443833b7e723f5ab566bf76a9489b2129a77f4bc9c566e27013c6": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "0e6f0280d10c74b9a4671392697c51e388c3fbd9aacd0919d82c660f6cd9d017": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "8630a14bf501c029c43cfea48ab0c15be3e655e62d0122808f4ece43c5098aae": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        },
+        "6f693b850b836ca32d43434438975b3f5174e9c29987bb6f1c495b5cd1ac0f44": {
+          "valid_repeats": 3,
+          "distinct_labels": 1
+        }
+      },
+      "messages_with_label_flips": 0,
+      "failures": 0,
+      "handwritten": [
+        {
+          "id": "manual-personal",
+          "expected": 0,
+          "prediction": 0
+        },
+        {
+          "id": "manual-spam",
+          "expected": 1,
+          "prediction": 1
+        },
+        {
+          "id": "manual-override",
+          "expected": 1,
+          "prediction": 1
+        },
+        {
+          "id": "manual-quoted",
+          "expected": 0,
+          "prediction": 0
+        }
+      ]
+    }
+  }
+}

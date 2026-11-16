@@ -1,0 +1,48 @@
+{
+  "candidate": "liquid/d1-ultra",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "cdcfd2c1de6950432cdd",
+  "configuration": {
+    "group": "decision",
+    "model": "liquid/d1-ultra",
+    "variant": "choice",
+    "primitive": "choice",
+    "threshold": 0.7913111224201902
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1024,
+    "coverage": 0.9903288201160542,
+    "end_to_end_accuracy": 0.97678916827853,
+    "accuracy": 0.986328125,
+    "spam_f1": 0.944,
+    "macro_f1": 0.9681067853170189,
+    "precision": 0.9752066115702479,
+    "recall": 0.9147286821705426,
+    "false_positive_rate": 0.0033519553072625698,
+    "tn": 892,
+    "fp": 3,
+    "fn": 11,
+    "tp": 118,
+    "ham_support": 895,
+    "spam_support": 129,
+    "average_precision": 0.9791002379230794,
+    "brier": 0.029053717654613127,
+    "log_loss": 0.11707397835638843
+  },
+  "latency": {
+    "p50_ms": 945.2681319999101,
+    "p95_ms": 3890.278977450178,
+    "mean_ms": 1395.7775211992346,
+    "count": 1034
+  },
+  "cost_usd": 0.005346053999999999,
+  "unknown_cost_attempts": 10,
+  "failures": {
+    "http_504": 10
+  },
+  "record_count": 1034,
+  "stage": "test"
+}

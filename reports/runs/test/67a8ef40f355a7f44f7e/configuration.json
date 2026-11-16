@@ -1,0 +1,7 @@
+{
+  "group": "decision",
+  "model": "nace-ai/drex-v2.0",
+  "variant": "noul",
+  "primitive": "noul",
+  "threshold": 0.749
+}

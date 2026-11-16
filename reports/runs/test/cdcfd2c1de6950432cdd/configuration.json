@@ -1,0 +1,7 @@
+{
+  "group": "decision",
+  "model": "liquid/d1-ultra",
+  "variant": "choice",
+  "primitive": "choice",
+  "threshold": 0.7913111224201902
+}
