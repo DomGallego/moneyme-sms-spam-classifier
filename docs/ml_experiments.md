@@ -50,29 +50,55 @@ The inference artifacts contain feature extraction and the fitted classifier, no
 
 ## Generation and quality
 
-Generator: `openai/gpt-6-luna`; prompt: `prompts/spam_augmentation_v1.txt`; settings: `configs/imbalance_experiment.json`. Generation uses the shared persistent US$10 ledger and existing remaining authorization. Requests are cached by prompt/configuration and parent identity; interruption recovery uses settled ledger metadata and journals.
+Generator: `openai/gpt-6-luna`; prompt: `prompts/spam_augmentation_v1.txt`; settings: `configs/imbalance_experiment.json`. Generation shares the persistent US$10 experiment ledger. Requests are cached by prompt/configuration and parent identity; recovery uses settled ledger metadata and journals.
 
-The generator rewrites one original training spam at a time. It receives no validation/test messages, predictions, or labels. Automated checks reject empty/oversized outputs, duplicate text, matches to another original training family template, and invented long digit sequences or URLs. These checks cannot establish semantic label validity. Assistant qualitative pilot review is recorded separately and is not independent human annotation. Ambiguous source labels, semantic drift, and generator-style shortcuts remain limitations. The generated spam label is inherited, not independently verified.
+The generator rewrites one original training spam at a time, without validation/test messages, predictions, or labels. Checks reject empty/oversized outputs, duplicates, matches to another training family template, and invented long digit sequences or URLs. Labels are inherited and not independently human-verified. Ambiguous source labels, semantic drift, and generator-style shortcuts remain limitations. The [pilot quality record](../reports/runs/augmentation/pilot_review.json) documents the review method and observations.
 
 Saved pool records contain generated text, parent/family IDs, source fold, generator/configuration identity and attempt ID. The pool is frozen before augmentation training and its hash is checked on resume. Generation costs are separate from classifier inference costs and are not multiplied by the number of trials or folds.
 
-## Execution
+## Reproduction
+
+Run from the repository root in a separate working copy: training writes artifacts, and existing final evaluations are protected against overwrite. Archive existing final-run directories and frozen selections before an independent run. The lockfile is canonical; exported requirements provide pip installations. Dataset attribution and original terms are in [DATASET_README.txt](DATASET_README.txt).
+
+Install the analysis environment, fetch the fingerprinted dataset, and prepare partitions:
 
 ```bash
 uv sync --frozen --extra analysis --extra dev
-python scripts/generate_augmentation.py --limit 12
+uv run --no-sync python scripts/download_data.py
+uv run --no-sync sms-spam prepare
+uv run --no-sync python scripts/download_models.py
+```
+
+The model downloader uses exact revisions from `configs/encoder_revisions.json` and updates machine-specific cache paths. Raw data, caches, and large checkpoints are Git-ignored. Serving the included release needs none of these downloads.
+
+### Local treatment matrix
+
+```bash
+uv run --no-sync python scripts/generate_augmentation.py --limit 12
 # Review reports/runs/augmentation/pilot_review.json and source/variant examples.
-python scripts/generate_augmentation.py --limit 0 --rounds 2
-python scripts/run_imbalance.py embeddings
-python scripts/run_imbalance.py numeric
-python scripts/run_imbalance.py encoders
-python scripts/run_imbalance.py freeze
-python scripts/run_imbalance.py evaluate
+uv run --no-sync python scripts/generate_augmentation.py --limit 0 --rounds 2
+uv run --no-sync python scripts/run_imbalance.py embeddings
+uv run --no-sync python scripts/run_imbalance.py numeric
+uv run --no-sync python scripts/run_imbalance.py encoders
+uv run --no-sync python scripts/run_imbalance.py freeze
+uv run --no-sync python scripts/run_imbalance.py evaluate
 ```
 
 The generation commands make paid calls within the cumulative cap; training/evaluation make no classifier API calls. Numeric fitting can resume by completed candidate; `--treatments` and `--only` restrict work. Large checkpoints and vector caches are ignored by Git; configurations, search histories, predictions, manifests and generated-text provenance are reviewable.
 
 The supplied frozen pool contains 2,550 accepted variants, covering the full-training and all five CV fitting quotas. Its frozen identity makes generation commands return the cached summary without paid calls. An independent regeneration can differ because provider generation is not deterministic; the persisted pool, request journal and fingerprints are the exact execution evidence. `augmentation_fit_membership.json` records which generated IDs and parent IDs enter each fitting partition. `search_budget_audit.json` verifies matched sampled settings and complete finite fold scores across treatments.
+
+`uv run --no-sync python scripts/complete_ml_benchmark.py` resumes the full treatment workflow, verifies preservation hashes, checks Docker, and executes the notebook. The separately frozen serving search has its own 20-trial initial search and 60-trial refinement for three candidates:
+
+```bash
+uv run --no-sync sms-spam train --trials 20 --jobs 2
+uv run --no-sync sms-spam train --trials 60 --jobs 2 --only logistic_char svm_char logistic_combined
+uv run --no-sync sms-spam embeddings
+uv run --no-sync sms-spam encoder
+uv run --no-sync sms-spam freeze-local
+```
+
+### Runtime and compute
 
 Linux amd64 uses XGBoost's official CPU-only package, keeping CPU searches independent of GPU-driver discovery. CUDA is used for frozen embedding extraction and encoder training. Training runs can overlap; wall times are operational measurements, not isolated hardware benchmarks. Original and augmented encoder runs match epoch counts, so augmented runs take more optimizer steps. A recovered completed checkpoint can have unknown training wall time; missing time is never reported as zero.
 
@@ -82,10 +108,30 @@ An isolated official CPU-only PyTorch runtime avoids optimizer-level CUDA probes
 
 Text augmentation also introduces information from a pretrained generator, unlike SMOTE's interpolation of supplied vectors. The comparison evaluates these complete strategies; it does not isolate sample count from generator knowledge or establish that Luna is the optimal augmentation model.
 
+### Hosted experiments and reports
+
+Candidates are in `configs/candidates.json`. Seven LLMs compare zero-shot/four-example few-shot prompts; seven decision models compare `choice`/`noul`. Examples come from training only. Variants first use 96 stratified validation messages, then one variant per model uses full validation for thresholds and serving selection. All 14 frozen variants proceed to test. Availability/pricing snapshots do not guarantee inference access or immutable upstream weights.
+
+With your own OpenRouter key, the recorded workflow uses a US$10 cumulative experiment cap, including a US$1 pilot:
+
+```bash
+uv run --no-sync sms-spam catalog
+uv run --no-sync sms-spam hosted --stage pilot --limit 8 --cap 1
+uv run --no-sync python scripts/hosted_development.py
+uv run --no-sync sms-spam finalize
+uv run --no-sync sms-spam hosted --stage test --limit 0 --cap 10 --selected
+uv run --no-sync sms-spam report
+uv run --no-sync python scripts/finalize_reports.py
+```
+
+These hosted commands authorize paid calls up to the specified cap; preserve `reports/budget.sqlite` across stages. Inspect the cap in the orchestration script before running. `scripts/resume_hosted.py` resumes an interrupted workflow without reselecting after test begins. Do not change prompts mid-stage or restart selection after inspecting test.
+
+`report` regenerates saved-result plots/tables without paid calls. `finalize_reports.py` also requires saved verification records and executes the notebook. To rebuild only the notebook, run `scripts/build_notebook.py`, then `scripts/execute_notebook.py`, using the analysis environment. Cached responses do not measure live availability or latency; cost-reservation details are in [architecture.md](architecture.md).
+
 ## Evaluation provenance and deployment
 
 The existing test results have already been inspected. Its unchanged messages are used for an explicitly exploratory treatment comparison; this is not a new independent generalization estimate. A fresh temporal or representative external holdout is required for a fresh final claim. Freeze candidate definitions before computing these comparisons and do not tune on their errors.
 
-The API's existing release artifact and hosted selections remain separately frozen. The release decision is not automatically changed by a treatment ranking. Historical preselected-system evidence and equal-budget treatment evidence are distinguished by manifests and evaluation-scope fields. Actual completion and verification status are in `reports/implementation_status.md`.
+The API release and hosted selections remain separately frozen; treatment rankings do not automatically replace them. Manifests and evaluation-scope fields distinguish historical preselected-system evidence from equal-budget treatment evidence. See [RESULTS.md](../reports/RESULTS.md) and [ML_TREATMENTS.md](../reports/ML_TREATMENTS.md).
 
 Neural classification metrics are computed with batched CPU inference using six threads for efficiency. Warm end-to-end per-message latency uses one thread, concurrency one, and 100 original test messages, including encoding. These scopes are recorded separately; bulk scoring time is not presented as single-request latency. Classical pipeline latency also uses one-thread settings. Hosted latency includes network/provider time and was measured at its recorded concurrency.

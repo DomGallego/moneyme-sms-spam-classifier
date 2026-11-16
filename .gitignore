@@ -9,12 +9,13 @@ wheels/
 # Virtual environments
 .venv
 
-# Personal assessment notes and downloaded source data
+# Personal notes and downloaded source data
 questions_dump.txt
 tasks.txt
 assessment_guide.md
 data/
 plan.md
+interview-guide.html
 
 # Local run orchestration helpers
 scripts/pilot.py

@@ -7,13 +7,9 @@ md, code = nbf.v4.new_markdown_cell, nbf.v4.new_code_cell
 nb.cells = [
     md("""# SMS spam classification: experiment and engineering report
 
-This assessment compares 60 local ML configurations across original training data, LLM text augmentation and SMOTE, seven hosted generative LLMs, and seven hosted decision models. The task is to reproduce the supplied SMS Spam Collection labels; no particular MoneyMe blocking workflow is assumed.
+Compare 60 local ML configurations, seven generative LLMs, and seven specialized decision models on the SMS Spam Collection. Decision models explore quality, latency, and cost alongside conventional approaches.
 
-The assessment asks for two classifiers: a supervised ML classifier and a generative LLM classifier. I also explored specialized decision models because I was curious about this recent direction in AI and wanted to compare their classification quality, latency and cost with the two required approaches.
-
-To account for class imbalance, I used group-aware stratified splits and cross-validation, selected numeric ML configurations using spam F1, and reported spam precision/recall alongside accuracy. I searched class-weight or positive-class-weight settings where supported and selected score-based decision thresholds on validation data.
-
-The training-data comparison evaluates original fitting data, LLM-generated spam text augmentation, and SMOTE applied to numerical feature vectors as separate treatments. Augmentation and SMOTE operate only on fitting data; validation and test messages remain unchanged. The treatment results and their evaluation limitations are discussed below.
+Imbalance handling includes grouped stratification, class-weight searches, validation-selected thresholds, and separate training-only text augmentation/SMOTE treatments. Validation and test messages remain original.
 
 **Spam is positive.** Configurations and thresholds are selected using development data and frozen before their test predictions. The existing test set was already inspected before the treatment experiment, so treatment results are explicitly exploratory, not fresh independent estimates. The separately frozen serving release retains its original selection provenance. This notebook reads saved experiment artifacts and makes **no paid API requests**. Run commands and deployment instructions are in the repository README. Model IDs and prices reflect the recorded execution date, not a permanent catalog guarantee."""),
     code("""from pathlib import Path
@@ -74,7 +70,7 @@ The dummy predicts ham for every message. Its accuracy can be high while spam re
 - False positive rate = FP / (FP + TN): legitimate messages incorrectly flagged.
 - Accuracy = (TP + TN) / N: useful alongside class-specific measures.
 
-We also explore a 98% precision target on validation with at least 10 positive predictions. This is an illustrative operating point, **not** a MoneyMe requirement or a statistically established guarantee. If unsupported or unattainable, report it. The API classifies; it does not block messages.
+We also explore a 98% precision target on validation with at least 10 positive predictions. This is an illustrative operating point, not an established service guarantee. If unsupported or unattainable, report it. The API classifies; it does not block messages.
 
 Invalid hosted responses count as failures, not ham. Coverage and correct/attempted accuracy accompany successful-response metrics."""),
     md("""## ML methods and tuning
@@ -102,7 +98,7 @@ The matrix contains 16 classical pipelines and two frozen MiniLM pipelines × th
 
 The final fitting target is 2,710 ham and 2,710 spam; augmentation requires 2,318 accepted additions. Each CV fitting partition has its own target. Generated descendants inherit parent family IDs and cannot enter fitting when their parent family is held out. The original held-out folds, validation and test are never resampled. Class weights are searched explicitly; balanced weighting recomputes from effective fitting counts.
 
-Generated labels are inherited, not independently verified. Integrity filters and assistant qualitative pilot review do not rule out semantic drift, ambiguous source labels, repetitive text or generator-style shortcuts. Cost and parent/configuration provenance are persisted.
+Generated labels are inherited, not independently human-verified. Integrity filters cannot rule out semantic drift, ambiguous labels, repetition, or generator-style shortcuts. The pilot record documents the review method; cost and parent/configuration provenance are persisted.
 
 The head-only and 0.00002 encoder settings use CUDA/float16 autocast. The 0.00005 setting uses isolated CPU-only PyTorch/float32 with dynamic padding and seeded length-grouped batches for **both** treatments. Backend, precision and batching are matched within each setting, but differ across settings; this is not a controlled learning-rate-only ablation. Per-model manifests record actual execution. Full details: `docs/ml_experiments.md`."""),
     code("""if Path("reports/runs/augmentation/summary.json").exists():
@@ -138,7 +134,7 @@ Seven LLMs compare zero-shot and fixed four-example few-shot prompts. Examples c
 
 Typed output is not a guarantee of correctness or calibration. Luna's generative and decision interfaces are related, so they are not independent underlying model families. Microsoft's decision model is Qwen-derived and may update behind a stable API. Catalog availability is verified separately from actual successful inference.
 
-A budget ledger reserves conservative costs before requests and retains unknown charges. The authorized cap is US$10 total, including a US$1 pilot. Pilot accuracy is not a meaningful ranking; development selection and final evaluation use larger partitions."""),
+A budget ledger reserves conservative costs before requests and retains unknown charges. The experiment cap is US$10 total, including a US$1 pilot. Pilot accuracy is not a meaningful ranking; development selection and final evaluation use larger partitions."""),
     code("""display(read_json("configs/candidates.json"))
 if Path("reports/candidate_availability.json").exists():
     available = read_json("reports/candidate_availability.json")
@@ -190,7 +186,7 @@ figure("test_latency")"""),
 
 Inspect errors after freezing models; this analysis must not feed further tuning on the same test set. False positives represent legitimate SMS flagged, while false negatives represent missed spam. Repeated-template, short-message, URL, digit, and capitalization slices are descriptive; small slices do not support broad claims.
 
-Deploy one selected local ML pipeline, one selected hosted LLM, and one selected decision model. The FastAPI application runs inference only, with validated requests, explicit errors, bounded concurrency/timeouts, and budget controls. Reviewers supply their own OpenRouter key. Docker packages dependencies and the local artifact; hosted inference still requires internet access.
+Deploy one selected local ML pipeline, one selected hosted LLM, and one selected decision model. The FastAPI application runs inference only, with validated requests, explicit errors, bounded concurrency/timeouts, and budget controls. Hosted inference requires an OpenRouter key. Docker packages dependencies and the local artifact; hosted inference still requires internet access.
 
 Some misses can reflect conversational-looking spam or jokes labelled spam in the source corpus. Keep the supplied labels unchanged, discuss ambiguous examples, and avoid relabelling test errors to improve reported scores.
 
@@ -215,7 +211,7 @@ if Path("reports/error_slices.csv").exists():
     display(Markdown("Slices are descriptive, overlap, and can have very few spam examples. Do not interpret no-spam-slice F1 as a useful quality estimate."))"""),
     md("""## Reproduction and limitations
 
-Use the repository [README](../README.md) for installation, training, hosted-budget, report, and deployment commands. The [experiment protocol](../docs/ml_experiments.md) defines data boundaries, search budgets and evaluation scope; the [architecture](../docs/architecture.md) explains the shared components. The [implementation status](../reports/implementation_status.md) records what actually ran, limitations, and verification evidence.
+See the [modelling guide](README.md) for CLI usage, the [experiment protocol](../docs/ml_experiments.md) for reproduction and evaluation boundaries, and [results](../reports/RESULTS.md) for findings. The [architecture](../docs/architecture.md) covers shared inference, tracking, and deployment.
 
 Results are specific to the recorded split, dataset, code/configuration hashes, hardware, provider routing, and execution date. This small historical public corpus cannot establish modern production performance or exclude pretrained contamination. Hosted inference can change behind stable names. Training family grouping is conservative and may miss paraphrases. Calibration and high-precision estimates have limited sample support.
 

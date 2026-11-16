@@ -9,7 +9,7 @@ import httpx
 import numpy as np
 
 name = "moneyme-sms-smoke"
-image = "moneyme-sms:assessment"
+image = "moneyme-sms:local"
 build_started = time.perf_counter()
 subprocess.run(
     [

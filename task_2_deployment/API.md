@@ -2,7 +2,7 @@
 
 Base URL: `http://localhost:8000`. Interactive documentation: `/docs`. OpenAPI schema: `/openapi.json`.
 
-For installation, environment settings and commands to test all three classifiers on your own machine, follow the [Docker walkthrough](README.md).
+Setup: [deployment guide](README.md).
 
 ## Prediction endpoints
 
@@ -18,7 +18,7 @@ All endpoints accept the same JSON object:
 {"text":"Are we still meeting for lunch?"}
 ```
 
-`text` must be a string containing non-whitespace content, at most 5,000 characters. Extra fields are rejected. Text is not silently shortened by the API. Encoder pipelines may apply their documented token limit.
+`text` must be nonblank, at most 5,000 characters. Extra fields are rejected; the API does not silently shorten text.
 
 Success (`200`):
 
@@ -26,7 +26,7 @@ Success (`200`):
 {"label":"ham"}
 ```
 
-`label` is always `spam` or `ham`. Spam is the positive class. The API returns a classification; it does not block or forward SMS. Exact examples are illustrative, not promised predictions for every model version.
+`label` is `spam` or `ham`; spam is positive. The API classifies messages without blocking or forwarding them. Labels depend on the text and model version.
 
 ```bash
 curl -X POST http://localhost:8000/predict/ml \
@@ -34,11 +34,7 @@ curl -X POST http://localhost:8000/predict/ml \
   -d '{"text":"Are we still meeting for lunch?"}'
 ```
 
-Change `/ml` to `/llm` or `/decision` for the other classifiers. Or run:
-
-```bash
-python task_2_deployment/sample_client.py --text 'Your SMS here'
-```
+Change `/ml` to `/llm` or `/decision` for the other classifiers.
 
 ## Errors
 
@@ -51,7 +47,7 @@ Errors use FastAPI's `detail` field. No provider secret or raw upstream response
 | `503` | Hosted route disabled, budget exhausted, or concurrency limit reached |
 | `504` | Hosted inference timed out |
 
-A failed model call never becomes a successful `ham` response. There is no automatic cross-model fallback. The initial implementation makes one provider attempt per inference; retrying is an explicit client decision and can incur another charge. The ledger reserves uncertain costs after timeouts.
+A failed call never becomes `ham`. Each inference makes one provider attempt, without automatic fallback. Client retries can incur another charge; unknown costs remain reserved after timeouts.
 
 ## Health and configuration
 

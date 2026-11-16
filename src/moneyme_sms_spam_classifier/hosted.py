@@ -279,7 +279,7 @@ class OpenRouterClassifier:
                 json=payload,
                 headers={
                     "Authorization": f"Bearer {self.key}",
-                    "X-Title": "MoneyMe SMS assessment",
+                    "X-Title": "SMS Spam Classifier",
                 },
             )
             if response.status_code >= 400:

@@ -21,7 +21,7 @@ if frozen["selection_stage"] != "validation":
 if len(read_json("reports/runs/test/results.json")) != 14:
     raise ValueError("Finish the hosted test run before the live container check")
 cap = read_json("configs/budget.json")["total_cap_usd"]
-image, name = "moneyme-sms:assessment", "moneyme-sms-live-smoke"
+image, name = "moneyme-sms:local", "moneyme-sms-live-smoke"
 subprocess.run(
     [
         "docker",

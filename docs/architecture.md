@@ -1,130 +1,93 @@
 # Architecture
 
-This document describes the implemented SMS classification system. It has an offline experiment workflow and an inference application sharing the same prediction code. Reviewers can run the selected release without training, raw data or a GPU.
+Offline experiments produce frozen release settings. The CLI and API share [inference.py](../src/moneyme_sms_spam_classifier/inference.py); neither trains or resamples during prediction.
 
-## Shipped classifiers and release boundary
+## Release
 
-| Group | Selected serving configuration | Runtime dependency |
+| Group | Serving configuration | Runtime |
 |---|---|---|
-| Supervised ML | Character TF-IDF + Logistic Regression, saved validation-selected threshold | CPU and the included `artifacts/release/model.joblib` |
-| Generative LLM | `google/gemini-4-hydrogen`, four-example few-shot prompt | OpenRouter key, access, internet and service budget |
-| Decision model | `perplexity/pplx-decider-v1.3:free`, `choice` primitive and validation-selected threshold | OpenRouter key, access, internet and service budget |
+| ML | Character TF-IDF + Logistic Regression and validation-selected threshold | CPU; included artifact |
+| LLM | `google/gemini-4-hydrogen`, four-example few-shot | OpenRouter |
+| Decision | `perplexity/pplx-decider-v1.3:free`, `choice` and selected threshold | OpenRouter |
 
-[local_selection.json](../configs/local_selection.json) identifies the local artifact and its checksum. [hosted_frozen.json](../configs/hosted_frozen.json) identifies the hosted selections, examples and decision threshold. The saved [catalog](../reports/catalog.json) provides recorded capabilities and pricing. These are local configuration snapshots; hosted weights, availability and prices may change upstream.
+[Local selection](../configs/local_selection.json) records the artifact checksum; [hosted selection](../configs/hosted_frozen.json) records models, examples, and thresholds. The [catalog](../reports/catalog.json) snapshots pricing/capabilities. Hosted weights, routing, availability, and prices can change behind stable IDs.
 
-The CLI and API delegate to [inference.py](../src/moneyme_sms_spam_classifier/inference.py). CLI calls do not need an HTTP server. The API loads the selected release during startup; neither interface trains models or runs augmentation/SMOTE during prediction. Candidate encoder checkpoints remain experiment artifacts and are not dependencies of the shipped local API.
-
-## Offline experiment architecture
+## Experiment flow
 
 ```mermaid
 flowchart TD
-    RAW[Supplied SMS corpus] --> CHECK[Parse, validate and fingerprint]
-    CHECK --> CLEAN[Deduplicate and group recognized families]
-    CLEAN --> SPLIT[Persist original train / validation / test]
-    SPLIT --> TRAIN[Training SMS and family-aware CV folds]
-    SPLIT --> VAL[Original validation SMS]
-    SPLIT --> TEST[Original test SMS]
-    TRAIN --> NUM[Numeric ML searches with fitting-only treatments]
-    TRAIN --> ENC[Frozen embeddings and DistilBERT training]
-    TRAIN --> EX[Few-shot examples from training only]
-    EX --> HOST[Hosted prompt and primitive experiments]
+    RAW[SMS corpus] --> DATA[Validate, fingerprint, deduplicate, group families]
+    DATA --> TRAIN[Training and five grouped CV folds]
+    DATA --> VAL[Original validation]
+    DATA --> TEST[Original test]
+    TRAIN --> ML[Numeric searches and encoder training]
+    TRAIN --> EX[Few-shot examples]
+    EX --> HOST[Hosted prompt and primitive comparison]
     VAL --> HOST
-    VAL --> SELECT[Select variants, checkpoints, thresholds and serving models]
-    NUM --> SELECT
-    ENC --> SELECT
+    ML --> SELECT[Validation selection: checkpoints, variants, thresholds, serving models]
     HOST --> SELECT
-    SELECT --> FREEZE[Freeze settings and selected local artifact]
-    FREEZE --> FINAL[Evaluate frozen configurations]
-    TEST --> FINAL
-    FINAL --> REPORT[Saved predictions, metrics, plots and notebook]
-    FREEZE --> RELEASE[CLI / API release configuration]
+    VAL --> SELECT
+    SELECT --> FREEZE[Freeze configurations and release artifact]
+    FREEZE --> EVAL[Evaluate and save predictions, metrics, notebook]
+    TEST --> EVAL
+    FREEZE --> SERVE[CLI and API]
 ```
 
-Training CV selects numeric ML hyperparameters. Validation selects checkpoints, hosted variants, score thresholds and serving candidates. Hosted development compares variants on a fixed 96-message validation subset before full validation. Test results do not automatically replace serving selections. The original serving freeze is preserved separately from the 60-configuration treatment evaluation.
+Numeric hyperparameters use training CV. Hosted variants first use a fixed 96-message validation subset, then full validation. Related message families stay together; learned features, augmentation, and SMOTE stay within fitting partitions. Frozen MiniLM embeddings can be cached because the encoder learns no corpus statistics. DistilBERT uses a separate checkpoint-selection protocol.
 
-The treatment comparison uses an already-inspected test set and is explicitly exploratory. Freezing its configurations before generating treatment predictions does not create a fresh independent evaluation. Data boundaries, search budgets and execution differences are detailed in [ml_experiments.md](ml_experiments.md).
+The 60-configuration treatment comparison reuses an already-inspected test set and is exploratory. Serving selections retain their original freeze records. See the [experiment protocol](ml_experiments.md) for exact boundaries, budgets, and hardware differences.
 
-## Fitting boundaries and imbalance strategy
+## Versioning and recovery
 
-The numeric matrix contains 18 pipelines, each evaluated with original data, text augmentation and SMOTE. Three DistilBERT settings compare original and augmented text, giving 60 configurations in total.
+File-based tracking keeps experiments inspectable without an external server; MLflow, Weights & Biases, and DVC are not used.
 
-| Boundary | Implemented behavior | Purpose |
-|---|---|---|
-| Original partitions and training CV folds | Exact duplicates are removed; recognized family groups stay together | Reduce leakage from repeated messages/templates |
-| Feature fitting | Vocabulary, IDF, scaling and other learned transformations fit within fitting partitions | Keep held-out corpus statistics out of training |
-| Generated spam | Variants inherit source parent/family IDs and are eligible only when those parents are in fitting data | Keep descendants of held-out parents out of fitting |
-| SMOTE | Interpolate fitting vectors after fitting the feature extractor; never resample prediction requests | Balance fitting vectors without modifying evaluation data |
-| Frozen MiniLM | Compute each text's embedding with a fixed pretrained encoder | Permit caching without learning corpus statistics or labels |
-| DistilBERT | Train on original or eligible augmented text and select checkpoints on validation | Keep the encoder protocol distinct from numeric CV and vector SMOTE |
+| Item | Evidence |
+|---|---|
+| Code/environment | Git revision/status, source hashes, environment metadata, lockfile |
+| Data | Raw/prepared fingerprints, family IDs, split IDs, seeds, CV folds |
+| Local models | Search histories, hyperparameters, thresholds, predictions, artifact checksum |
+| Encoders | Exact revisions in [encoder_revisions.json](../configs/encoder_revisions.json) |
+| Hosted configurations | Model/settings/examples/criteria; identities include prompt and criteria content |
+| Outcomes/cost | JSON/CSV manifests, request journals, SQLite reservations and known charges |
 
-Group-aware stratification and spam-specific metrics support evaluation under imbalance. Class-weight/positive-weight searches where supported, validation-selected score thresholds, and fitting-only augmentation/SMOTE address different aspects of the classification tradeoff. None is assumed to improve every candidate.
+Records live in `artifacts/` and `reports/runs/`. Atomic metadata writes and journal/ledger recovery reuse completed outcomes. Resume guards reject changed records, splits, prompts, or criteria. Historical manifests retain their actual source identity.
 
-See [sampling.py](../src/moneyme_sms_spam_classifier/sampling.py), [data tests](../tests/test_data.py), [treatment boundary tests](../tests/test_sampling.py) and the [Task 1 diagram](../task_1_modelling/README.md#experimental-design-and-traceability).
+Recovery does not guarantee exactly-once provider execution: unresolved network attempts retain reservations and may be repeated on explicit resume. This is file-based tracking, not a centralized registry. Implementations: [common.py](../src/moneyme_sms_spam_classifier/common.py), [experiments.py](../src/moneyme_sms_spam_classifier/experiments.py), and [augmentation.py](../src/moneyme_sms_spam_classifier/augmentation.py).
 
-## Experiment identity, persistence and recovery
-
-Tracking is implemented with repository-visible JSON/CSV manifests and journals, content fingerprints, and SQLite cost accounting. I chose this approach to keep the assessment reviewable without an external tracking server. No MLflow, Weights & Biases or DVC integration is used; the system does not provide a centralized model registry or experiment dashboard. The [Task 1 tracking inventory](../task_1_modelling/README.md#model-versioning-and-experiment-tracking) maps versioned items to their evidence.
-
-Hosted configuration IDs hash the model settings together with the prompt and decision criteria. Stage manifests record selected record IDs, split fingerprints, source hashes, environment information and concurrency settings. Saved configurations, journals, predictions and summaries are under `reports/runs/`; model searches and validation records are under `artifacts/`.
-
-The runner reuses recorded outcomes and can recover settled results from the budget ledger if a journal append was interrupted. JSON metadata is written using a temporary file and atomic replacement. Journal recovery preserves an interrupted trailing fragment and rejects corruption inside completed records. Stage-resume checks reject changed records/splits; hosted test guards reject a missing full-validation freeze or changed prompt/criteria definitions before constructing a paid client.
-
-This supports recovery, not exactly-once provider execution. A crash or timeout can leave an unresolved network attempt; its reservation remains accounted for and an explicit resume can still repeat an unrecorded request. Freezing local configuration also does not freeze a provider's underlying model weights.
-
-Implementation: [experiments.py](../src/moneyme_sms_spam_classifier/experiments.py), [common.py](../src/moneyme_sms_spam_classifier/common.py), [augmentation.py](../src/moneyme_sms_spam_classifier/augmentation.py). Verification: [experiment guards](../tests/test_experiment_freeze.py) and [ledger/journal tests](../tests/test_hosted.py).
-
-## Runtime request architecture
+## Request flow
 
 ```mermaid
 flowchart TD
-    CLIENT[Python client / curl / Swagger UI] --> API[FastAPI schema validation]
-    API --> CAPACITY[Process-local capacity slot]
-    CAPACITY --> LOCAL[Selected local pipeline and saved threshold]
-    CAPACITY --> ENABLED[Selected enabled hosted adapter]
-    ENABLED --> BUDGET[Transactional cost reservation]
-    BUDGET --> PROVIDER[OpenRouter chat or Decisions endpoint]
-    PROVIDER --> VALIDATE[Validate output and cost metadata]
-    VALIDATE --> THRESHOLD[Apply decision score threshold where applicable]
-    THRESHOLD --> RESULT[Return spam / ham]
-    LOCAL --> RESULT
-    API -. invalid request .-> ERROR[Explicit HTTP error]
+    INPUT[POST SMS] --> VALIDATE[Validate schema]
+    VALIDATE --> CAPACITY[Acquire process-local capacity]
+    CAPACITY --> LOCAL[Local pipeline and saved threshold]
+    CAPACITY --> RESERVE[Enabled hosted adapter: reserve cost]
+    RESERVE --> PROVIDER[OpenRouter request]
+    PROVIDER --> OUTPUT[Settle cost, validate response, apply decision threshold]
+    OUTPUT --> LABEL[Return spam or ham]
+    LOCAL --> LABEL
+    VALIDATE -. invalid input .-> ERROR[Explicit HTTP error]
     CAPACITY -. full .-> ERROR
-    ENABLED -. disabled .-> ERROR
-    BUDGET -. exhausted .-> ERROR
-    VALIDATE -. upstream or parsing failure .-> ERROR
-    CAPACITY --> LOG[Group, status and elapsed-time logging]
+    RESERVE -. disabled or exhausted .-> ERROR
+    OUTPUT -. provider or parsing failure .-> ERROR
 ```
 
-The diagram summarizes responsibilities rather than exact exception/finally ordering. The shared adapter handles cost settlement even for failed classifications. An acquired capacity slot is released when inference returns or raises a handled provider error. There is no automatic cross-model fallback or automatic retry.
+Successful responses contain only a label. Failures are explicit, with no automatic retry or fallback; capacity slots are released after completion/errors. See [API.md](../task_2_deployment/API.md) for schemas and status codes. CLI prediction bypasses HTTP but uses the same adapters and thresholds.
 
-Requests accept only a nonblank `text` string of at most 5,000 characters. Successful responses contain only a `spam` or `ham` label. Invalid requests return 422; disabled hosted routes, exhausted budget or capacity return 503; provider/response failures return 502; timeouts return 504. Full contracts are in [API.md](../task_2_deployment/API.md).
+SQLite transactions serialize cost checks/reservations. Known charges settle reservations; unknown charges remain reserved, including after failed classifications.
 
-The API starts with hosted routes disabled. Enabling them requires configuration with the reviewer's own key and budget. CLI hosted predictions use `--cap` separately from API settings. API capacity control is process-local, and the supplied container starts one Uvicorn process. Provider connection/read timeouts do not establish a strict total request deadline.
+| Context | Persistent ledger |
+|---|---|
+| Experiments | `reports/budget.sqlite` |
+| Hosted CLI | `reports/service-budget.sqlite` |
+| Docker API, both hosted routes | `/app/runtime/service-budget.sqlite` in `service-runtime` |
 
-## Cost accounting and operational visibility
+Caps apply per ledger, not account-wide. Deleting a ledger resets accounting. `MAX_INFLIGHT` is per process; the container starts one Uvicorn process. Provider timeouts are not a strict total request deadline. Logs contain group/status/elapsed time, without SMS or keys. Health checks application liveness, not provider availability.
 
-Before a hosted request, the adapter estimates a conservative reservation using the saved pricing catalog. SQLite transactions serialize the check-and-reserve operation across concurrent calls sharing a ledger. Reported known charges settle the reservation; absent/invalid cost information retains the reservation. Unknown cost is never reported as zero.
+## Packaging and operations
 
-| Context | Ledger | Scope |
-|---|---|---|
-| Experiment workflow | `reports/budget.sqlite` | Shared experiment stages using that file |
-| Standalone hosted CLI | `reports/service-budget.sqlite` | Hosted CLI calls using that file |
-| Docker API | `/app/runtime/service-budget.sqlite` | Both hosted routes in the persistent `service-runtime` volume |
+The [Dockerfile](../task_2_deployment/Dockerfile) pins Python/dependencies, includes the selected artifact/configurations, and runs as non-root. [Compose](../task_2_deployment/compose.yaml) binds localhost and persists accounting. No dataset, GPU, or model download is needed for local serving. Startup verifies the artifact checksum; load only trusted joblib artifacts.
 
-Caps are cumulative within each ledger, not account-wide OpenRouter limits. Preserving a volume/file preserves accounting; deleting it resets local accounting. Recorded catalog prices and conservative estimates do not guarantee a provider-side spending ceiling. Runtime capacity control is not a distributed rate limiter.
+[CI](../.github/workflows/ci.yml) defines lint, formatting, tests, and local-only Docker verification without paid calls. Deployment is manual. Saved [Docker](../reports/docker_smoke.json), [committed-checkout](../reports/committed_checkout_smoke.json), and [live hosted](../reports/live_container_smoke.json) checks document their own tested revisions/images; they do not establish a completed GitHub Actions run.
 
-Application prediction logs contain classifier group, status and elapsed milliseconds. They do not include raw SMS or API keys. `/health` reports application liveness, selected local candidate and enabled hosted groups without making a paid provider call. Model identities/settings and richer cost/usage metadata are recorded in configuration and experiment files; runtime request logs do not attach all that metadata to every request. This is application logging and saved evidence, not a deployed monitoring dashboard.
-
-## Packaging and verification
-
-The [Dockerfile](../task_2_deployment/Dockerfile) pins the Python base-image digest and installs pinned runtime requirements, the shared package, selected local artifact and hosted configuration. It runs as a non-root user. [Compose](../task_2_deployment/compose.yaml) binds the service to localhost and persists runtime accounting. No training dataset, full encoder checkpoint, GPU or model download is required at startup. Hosted inference still needs outbound internet access.
-
-Local model loading checks the SHA-256 recorded in the selection file. This detects a mismatched artifact; it is not a signature or permission to load an untrusted pickle/joblib file. The included model must be treated as a trusted repository release artifact.
-
-The [CI workflow](../.github/workflows/ci.yml) defines GitHub Actions checks on pushes and pull requests: install locked dependencies, check lint/formatting, run automated tests, then build and smoke-test the local-only Docker service. CI makes no paid provider calls. GitHub execution requires the workflow to be committed and pushed; the saved reports below document local verification, not a completed GitHub Actions run.
-
-Deployment is manual through Docker Compose. The repository has no automated image publishing or hosted deployment, so it provides configured continuous integration and reproducible manual deployment rather than a continuous deployment pipeline. See [CI and deployment](../task_2_deployment/README.md#ci-and-deployment) for the reviewer-facing explanation.
-
-[Unit tests](../tests/) cover data/treatment boundaries, parsing, budget concurrency/recovery, freeze guards and API contracts. Saved execution evidence includes [local Docker checks](../reports/docker_smoke.json), a [Git-visible-files deployment rehearsal](../reports/clean_checkout_smoke.json), and a [budgeted live hosted check](../reports/live_container_smoke.json). These reports identify the tested images and scope; the Git-visible rehearsal was a working-tree mirror, not a committed-clone check.
-
-Reviewer commands: [Task 1](../task_1_modelling/README.md), [Task 2](../task_2_deployment/README.md). Overall deliverable mapping: [assessment_checklist.md](assessment_checklist.md). Actual experiment completion and verification evidence: [implementation_status.md](../reports/implementation_status.md). The [repository audit](../reports/repository_audit.json) records the subsequent documentation, source, saved-metric, notebook and deployment review.
+Production work includes authentication/TLS, representative labelled traffic, load tests, quality/latency/cost monitoring, challenger evaluation, and rollback. Distribution drift alone does not establish accuracy loss.

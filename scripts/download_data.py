@@ -1,4 +1,4 @@
-"""Download the public UCI corpus and verify the assessment file fingerprint."""
+"""Download the public UCI corpus and verify the recorded dataset fingerprint."""
 
 import io
 import zipfile
@@ -17,7 +17,7 @@ with zipfile.ZipFile(io.BytesIO(response.content)) as archive:
     content = archive.read(name)
     if fingerprint(content) != expected:
         raise ValueError(
-            "UCI file differs from assessment input; obtain the original assessment file before reproducing results"
+            "UCI file differs from the recorded dataset fingerprint; verify the source version before reproducing results"
         )
     target = Path("data/sms+spam+collection/SMSSpamCollection")
     target.parent.mkdir(parents=True, exist_ok=True)

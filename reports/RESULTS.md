@@ -1,6 +1,6 @@
-# Final results and implementation evidence
+# Results
 
-The serving selections were frozen using development/validation evidence before their original held-out test. The 60-configuration ML treatment benchmark uses the same already-inspected test set and is explicitly exploratory. See ML_TREATMENTS.md for treatment results and evaluation provenance. These are historical public-dataset results, not production claims.
+Serving selections were frozen on development/validation before their original test. The 60-configuration [treatment comparison](ML_TREATMENTS.md) reuses that already-inspected test and is exploratory. These historical public-dataset scores do not establish production performance.
 
 ## Selected systems
 
@@ -10,42 +10,42 @@ The serving selections were frozen using development/validation evidence before 
 | llm | google/gemini-4-hydrogen | 0.9565 | 0.9837 | 0.9308 | 100.00% | 1684.12 | 1.3806 |
 | decision | perplexity/pplx-decider-v1.3:free | 0.9883 | 1.0000 | 0.9769 | 100.00% | 960.13 | 0.0000 |
 
-All systems use the same 1,034 test SMS (904 ham, 130 spam). Spam is positive. Local p95 measures warm sequential full-pipeline inference over 100 test messages; hosted p95 measures complete HTTP requests at concurrency 8. These are different runtime scopes, not isolated hardware benchmarks. API/container measurements are separate.
+Test: 1,034 SMS (904 ham, 130 spam); spam is positive. Local p95 is warm sequential full-pipeline inference over 100 messages. Hosted p95 includes HTTP/provider time at concurrency 8. These scopes differ; container timings are separate.
 
-The local artifact is character TF-IDF + Logistic Regression, about 252 KiB. Frozen embeddings and full encoder fine-tuning were included in the experiment; greater model complexity did not automatically improve held-out performance in the bounded searches. The LLM selection follows validation F1 rather than minimum price. The decision selection follows validation F1 subject to coverage eligibility. Free-tier pricing is temporary, not an established production price.
+The local artifact is character TF-IDF + Logistic Regression, about 252 KiB. Selections use validation F1, with coverage eligibility for decision models. Reported free-tier pricing may change; local infrastructure costs are unmeasured.
 
-## Full comparison and diagnostics
+## Detailed results
 
-- `final_comparison.csv`: 60 local treatment configurations, dummy baseline, seven LLMs, seven decision models; 75 rows. Evaluation-scope fields distinguish exploratory treatment results from original preselected-system evidence.
-- `ML_TREATMENTS.md` and `ml_treatment_comparison.csv`: fitting treatments, per-treatment leaders and full development/test comparison. No automatic serving-release replacement.
-- `ml_treatment_paired_differences.csv`: exploratory paired family-bootstrap changes relative to each pipeline's original-data treatment.
-- `paired_selected_comparisons.csv`: paired family-bootstrap F1 differences for the preselected systems; intervals can overlap zero. No multiple-comparison correction.
-- `hosted_test_uncertainty.csv`: family-bootstrap F1 intervals conditional on successful responses.
-- `hosted_operating_points.csv`: validation-selected operating points evaluated on test.
-- `hosted_calibration_bins.csv`: probability bins with counts; never assume vendor calibration transfers.
-- `error_slices.csv`: overlapping descriptive slices with sample/class support and failed spam/ham counts.
-- `local_test_errors.csv` and `hosted_test_errors.csv`: inspection examples; no retuning on these errors.
-- `runs/`: effective configurations, manifests, search histories, per-message predictions and provider usage.
+| Files | Contents |
+|---|---|
+| [final_comparison.csv](final_comparison.csv) | 75 entries: 60 local configurations, baseline, seven LLMs, seven decision models; evaluation-scope fields distinguish original and exploratory results |
+| [ML_TREATMENTS.md](ML_TREATMENTS.md), `ml_treatment_comparison.csv` | Treatment results and validation leaders |
+| `ml_treatment_paired_differences.csv`, `paired_selected_comparisons.csv` | Paired family-bootstrap F1 differences; exploratory intervals without multiple-comparison correction |
+| `hosted_test_uncertainty.csv`, `hosted_operating_points.csv`, `hosted_calibration_bins.csv` | Successful-response F1 intervals, selected thresholds, calibration bins/counts |
+| `error_slices.csv`, `local_test_errors.csv`, `hosted_test_errors.csv` | Overlapping descriptive slices and errors; no retuning on these examples |
+| [runs/](runs/) | Configurations, manifests, predictions, search records, and provider usage |
 
-## Cost accounting
+## Cost
 
-User-authorized cap: **US$10.00** total, including a US$1 pilot. Provider-reported charges: **US$5.162992**. Conservative accounted total: **US$5.274930**, including retained reservations for **167** attempts with unknown charges.
+Experiment cap: **US$10.00**, including a US$1 pilot. Provider-reported: **US$5.162992**. Conservative accounted total: **US$5.274930**, including reservations for **167** attempts with unknown charges.
 
-`cost_attempts.csv` exports sanitized attempt-level accounting; `cost_ledger_summary.csv` separates pilot, development, validation, test, augmentation generation, robustness and service checks. Unknown charges are not zero. Augmentation cost is a one-time training-data cost, not per-prediction classifier cost. Projections per million messages assume the same message/prompt lengths, cache behavior, retry policy and prices. Local API charges are zero but infrastructure/electricity costs are unmeasured. Pretraining costs are outside this assessment for pretrained systems.
+`cost_attempts.csv` and `cost_ledger_summary.csv` separate attempt/stage accounting. Unknown charges are not zero. Augmentation is a one-time training-data expense. Cost projections assume recorded prices, message/prompt lengths, caches, and retry policy. Local electricity/infrastructure and pretrained-model training costs are unmeasured.
 
-## Reliability and verification
+## Reliability
 
-- nace-ai/drex-v2.0: test coverage 95.65%; failures {"http_429": 45}. Conditional classification metrics must be read with coverage and correct/attempted accuracy.
-- liquid/d1-ultra: test coverage 99.03%; failures {"http_504": 10}. Conditional classification metrics must be read with coverage and correct/attempted accuracy.
-- google/gemini-decision-1: test coverage 99.81%; failures {"http_400": 2}. Conditional classification metrics must be read with coverage and correct/attempted accuracy.
-- openai/gpt-6-luna-decisions: test coverage 99.81%; failures {"http_502": 2}. Conditional classification metrics must be read with coverage and correct/attempted accuracy.
-- Automated suite: 27 tests, zero failures/errors; see `tests.xml`. A pinned Starlette TestClient deprecation warning is non-blocking.
-- Real Docker local-only smoke test and a Git-visible-files rehearsal passed without secrets, raw data, or local caches.
-- Live container checks exercised all three prediction routes, the sample Python client, and OpenAPI. Live calls used the same authorized budget ledger.
-- Stability checks repeated 16 validation messages three times per hosted champion; separate handwritten instruction-override examples are diagnostics, not a production benchmark. See `robustness_summary.json`.
+Hosted classification metrics are conditional on successful responses; read them with coverage and correct/attempted accuracy. Models with test failures:
 
-## Limits and next steps
+- `nace-ai/drex-v2.0`: coverage 95.65%; failures {"http_429": 45}.
+- `liquid/d1-ultra`: coverage 99.03%; failures {"http_504": 10}.
+- `google/gemini-decision-1`: coverage 99.81%; failures {"http_400": 2}.
+- `openai/gpt-6-luna-decisions`: coverage 99.81%; failures {"http_502": 2}.
 
-The small historical English corpus cannot establish performance on current MoneyMe traffic. Some conversational-looking messages and jokes carry spam labels, so label/task ambiguity matters. Public pretrained contamination cannot be ruled out, especially when benchmark scores approach perfection. Conservative family grouping misses some paraphrases. High-precision and calibration estimates have limited support. Hosted models and provider routing can change behind stable names.
+Saved verification: 27 automated tests with zero failures/errors ([tests.xml](tests.xml)); [local Docker](docker_smoke.json), [committed-checkout](committed_checkout_smoke.json), and [live API](live_container_smoke.json) checks. These are local records, not GitHub Actions results.
 
-Next production step: collect representative reviewed labels, establish the actual blocking/review policy and error costs, test temporal generalization, load-test the API, monitor quality/latency/cost/version changes, and retain rollback artifacts. No repository publication, email submission, or public hosting was performed by this implementation.
+`robustness_summary.json` records three repeats of 16 validation messages per hosted champion and handwritten instruction-override examples. These are diagnostics, not a production benchmark.
+
+## Limitations and next steps
+
+The historical English corpus has ambiguous labels and may overlap pretrained-model data. Family grouping can miss paraphrases; high-precision/calibration estimates have limited support. Hosted weights/routing can change. Generated training labels are inherited without independent human verification; treatment results reuse an inspected test set.
+
+Next: representative reviewed labels and a fresh temporal holdout, explicit error costs/operating policy, API load tests, quality/latency/cost monitoring, challenger evaluation, and rollback artifacts.

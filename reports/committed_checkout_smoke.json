@@ -45,5 +45,5 @@
     }
   },
   "new_paid_calls": 0,
-  "scope_note": "Archived package sources were tested using the existing locked host environment; Docker built its own pinned runtime installation. Verification evidence and submission-status documentation are recorded in a subsequent commit."
+  "scope_note": "Archived package sources were tested using the existing locked host environment; Docker built its own pinned runtime installation. Verification evidence is recorded in a subsequent commit."
 }
