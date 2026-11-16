@@ -1,0 +1,246 @@
+{
+  "configurations": [
+    {
+      "group": "llm",
+      "model": "openai/gpt-6-luna",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    {
+      "group": "llm",
+      "model": "anthropic/claude-haiku-5.5",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    {
+      "group": "llm",
+      "model": "qwen/qwen3.8-flash",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    {
+      "group": "llm",
+      "model": "google/gemini-4-hydrogen",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    {
+      "group": "llm",
+      "model": "openai/gpt-6.1-sol",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    {
+      "group": "llm",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    {
+      "group": "llm",
+      "model": "meta/muse-ember",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    {
+      "group": "decision",
+      "model": "typesafe/jev-1.14",
+      "variant": "noul",
+      "primitive": "noul",
+      "threshold": 0.65
+    },
+    {
+      "group": "decision",
+      "model": "perplexity/pplx-decider-v1.3:free",
+      "variant": "choice",
+      "primitive": "choice",
+      "threshold": 0.47232597942914095
+    },
+    {
+      "group": "decision",
+      "model": "nace-ai/drex-v2.0",
+      "variant": "noul",
+      "primitive": "noul",
+      "threshold": 0.749
+    },
+    {
+      "group": "decision",
+      "model": "liquid/d1-ultra",
+      "variant": "choice",
+      "primitive": "choice",
+      "threshold": 0.7913111224201902
+    },
+    {
+      "group": "decision",
+      "model": "google/gemini-decision-1",
+      "variant": "noul",
+      "primitive": "noul",
+      "threshold": 0.6077975538508754
+    },
+    {
+      "group": "decision",
+      "model": "openai/gpt-6-luna-decisions",
+      "variant": "choice",
+      "primitive": "choice",
+      "threshold": 0.33
+    },
+    {
+      "group": "decision",
+      "model": "microsoft/microsoft-decision-1",
+      "variant": "noul",
+      "primitive": "noul",
+      "threshold": 0.6791819705730426
+    }
+  ],
+  "champions": {
+    "llm": {
+      "group": "llm",
+      "model": "google/gemini-4-hydrogen",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "decision": {
+      "group": "decision",
+      "model": "perplexity/pplx-decider-v1.3:free",
+      "variant": "choice",
+      "primitive": "choice",
+      "threshold": 0.47232597942914095
+    }
+  },
+  "selection_stage": "validation",
+  "selection_basis": "validation F1 with >=95% coverage; latency tie break"
+}

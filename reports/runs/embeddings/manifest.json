@@ -1,0 +1,31 @@
+{
+  "created_at": "2026-11-15T10:32:21.561438+00:00",
+  "git_commit": "e0d4d68c755d93eff13d2645e6ccb8d2e9ed71bd",
+  "dirty": true,
+  "python": "3.12.3",
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "packages": {
+    "numpy": "2.5.4",
+    "pandas": "3.1.1",
+    "scikit-learn": "1.9.1",
+    "httpx": "0.28.1",
+    "fastapi": "0.163.1"
+  },
+  "source_hashes": {
+    "src/moneyme_sms_spam_classifier/__init__.py": "82f9d0c27f5de8305f058aee7214fbc39e035b2da078123b35dee2a9fb8355fc",
+    "src/moneyme_sms_spam_classifier/common.py": "8146b1bb6a7f132877cea87a1edb1a685df400346aa3bee4f992b9ac2397d32a",
+    "src/moneyme_sms_spam_classifier/data.py": "0a89ce9df347b82c5bcab064ce53c419e4a3ea4853669573794e56b97d2ad9b2",
+    "src/moneyme_sms_spam_classifier/evaluation.py": "623692d0da9d56e5827fb0aa248610a9677c9ca439fb0d4b7365ecc4acee5e9b",
+    "src/moneyme_sms_spam_classifier/experiments.py": "42a0dbd8249b9c2baa041f49b33af3534fd675a8fd96a8f191a43f2cc61398bf",
+    "src/moneyme_sms_spam_classifier/features.py": "e976d5f2ce0aa2dd0d2f9d57768bdc83704b8533066f964af04dcac1b469fa20",
+    "src/moneyme_sms_spam_classifier/hosted.py": "c08cba06ff9c1fa090149b74599af2e319ccdf9489a490d6300e8d8242bb6ad1",
+    "src/moneyme_sms_spam_classifier/semantic.py": "f02886f36fb975c0c4363170cd83c2aeb5d3d0af57fec1be85b30f187bda7856",
+    "src/moneyme_sms_spam_classifier/training.py": "5c19fc263498e58cbf62221908994fd262d321de2b7506d8c5b6d1fb8771764d"
+  },
+  "model": "sentence-transformers/all-MiniLM-L6-v2",
+  "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+  "extraction_seconds": 4.1311568839992105,
+  "normalized": true,
+  "dimensions": 384,
+  "max_length": 256
+}

@@ -1,0 +1,56 @@
+{
+  "candidate": "distilbert_full_5e-05",
+  "group": "ml",
+  "kind": "encoder",
+  "cv_f1": null,
+  "training_seconds": 91.83655736199944,
+  "parameters": {
+    "learning_rate": 5e-05,
+    "mode": "full",
+    "best_epoch": 3,
+    "epochs": 3,
+    "revision": "12040accade4e8a0f71eabdb258fecc2e7e948be"
+  },
+  "probabilities": true,
+  "thresholds": {
+    "primary": {
+      "threshold": 0.9537288546562195,
+      "f1": 0.9453125,
+      "precision": 0.968,
+      "recall": 0.9236641221374046,
+      "predicted_spam": 125
+    },
+    "high_precision": {
+      "threshold": 0.9952508211135864,
+      "f1": 0.9444444444444444,
+      "precision": 0.9834710743801653,
+      "recall": 0.9083969465648855,
+      "predicted_spam": 121
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "validation": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9864734299516909,
+    "accuracy": 0.9864734299516909,
+    "spam_f1": 0.9453125,
+    "macro_f1": 0.968797374586549,
+    "precision": 0.968,
+    "recall": 0.9236641221374046,
+    "false_positive_rate": 0.004424778761061947,
+    "tn": 900,
+    "fp": 4,
+    "fn": 10,
+    "tp": 121,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.9873880480940488,
+    "brier": 0.013487837310283293,
+    "log_loss": 0.09090139713857727
+  },
+  "artifact_bytes": 384
+}

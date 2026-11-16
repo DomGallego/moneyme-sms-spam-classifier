@@ -1,0 +1,56 @@
+{
+  "candidate": "distilbert_head_0.001",
+  "group": "ml",
+  "kind": "encoder",
+  "cv_f1": null,
+  "training_seconds": 34.40109308000319,
+  "parameters": {
+    "learning_rate": 0.001,
+    "mode": "head",
+    "best_epoch": 3,
+    "epochs": 3,
+    "revision": "12040accade4e8a0f71eabdb258fecc2e7e948be"
+  },
+  "probabilities": true,
+  "thresholds": {
+    "primary": {
+      "threshold": 0.08691392093896866,
+      "f1": 0.9498069498069498,
+      "precision": 0.9609375,
+      "recall": 0.9389312977099237,
+      "predicted_spam": 128
+    },
+    "high_precision": {
+      "threshold": 0.36347803473472595,
+      "f1": 0.9486166007905138,
+      "precision": 0.9836065573770492,
+      "recall": 0.916030534351145,
+      "predicted_spam": 122
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "validation": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9874396135265701,
+    "accuracy": 0.9874396135265701,
+    "spam_f1": 0.9498069498069498,
+    "macro_f1": 0.9713142976533369,
+    "precision": 0.9609375,
+    "recall": 0.9389312977099237,
+    "false_positive_rate": 0.0055309734513274336,
+    "tn": 899,
+    "fp": 5,
+    "fn": 8,
+    "tp": 123,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.9870711165495265,
+    "brier": 0.012427095115334312,
+    "log_loss": 0.06287646604436661
+  },
+  "artifact_bytes": 383
+}

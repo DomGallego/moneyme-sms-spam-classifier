@@ -1,0 +1,26 @@
+{
+  "cpu_model": "Intel(R) Core(TM) i7-10750H CPU @ 2.60GHz",
+  "logical_cpus": 12,
+  "platform": "Linux-6.18.58.1-microsoft-standard-WSL2-x86_64-with-glibc2.39",
+  "local_inference_threads": 1,
+  "local_training_search_jobs": 2,
+  "gpu_training": "NVIDIA GeForce RTX 3050 laptop, 4 GiB VRAM; CUDA confirmed outside sandbox",
+  "timing_conditions": "Local warm per-message measurements and hosted HTTP at concurrency 8. Container smoke uses 100 sequential requests over two fixed texts.",
+  "numeric_xgboost_distribution": "xgboost-cpu==3.4.1 on Linux amd64",
+  "encoder_runtime_policy": {
+    "cpu_settings": [
+      "distilbert_full_5e-05"
+    ],
+    "cpu_precision": "float32",
+    "cpu_padding": "dynamic padding with seeded length-grouped training batches; max_length remains 128",
+    "other_settings": "Auto device selection; this execution uses CUDA with float16 autocast for the other settings",
+    "reason": "Recurring WSL dxgvmb GPU-driver stalls. The 5e-05 setting uses CPU for both original and augmented arms to keep its paired hardware and precision matched."
+  },
+  "encoder_cpu_runtime": {
+    "torch": "2.15.0+cpu",
+    "threads": 6,
+    "precision": "float32",
+    "padding": "dynamic",
+    "batch_order": "seeded length groups"
+  }
+}
