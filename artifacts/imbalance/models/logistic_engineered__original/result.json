@@ -1,0 +1,63 @@
+{
+  "candidate": "logistic_engineered__original",
+  "group": "ml",
+  "kind": "classical",
+  "cv_f1": 0.8892353042404366,
+  "training_seconds": 4.730470188005711,
+  "parameters": {
+    "classifier__class_weight": {
+      "0": 1,
+      "1": 2
+    },
+    "classifier__C": 10.0
+  },
+  "probabilities": true,
+  "thresholds": {
+    "primary": {
+      "threshold": 0.3161395705226227,
+      "f1": 0.8661417322834646,
+      "precision": 0.8943089430894309,
+      "recall": 0.8396946564885496,
+      "predicted_spam": 123
+    },
+    "high_precision": {
+      "threshold": 0.9994831907479209,
+      "f1": 0.22972972972972974,
+      "precision": 1.0,
+      "recall": 0.1297709923664122,
+      "predicted_spam": 17
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "validation": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9671497584541063,
+    "accuracy": 0.9671497584541063,
+    "spam_f1": 0.8661417322834646,
+    "macro_f1": 0.9237096326615561,
+    "precision": 0.8943089430894309,
+    "recall": 0.8396946564885496,
+    "false_positive_rate": 0.014380530973451327,
+    "tn": 891,
+    "fp": 13,
+    "fn": 21,
+    "tp": 110,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.8926740835109898,
+    "brier": 0.02882249980289225,
+    "log_loss": 0.1258992695155469
+  },
+  "artifact_bytes": 962,
+  "base_candidate": "logistic_engineered",
+  "treatment": "original",
+  "fitted_class_counts": [
+    2710,
+    392
+  ],
+  "model_sha256": "42dceeeadc7fa2829d0ee5924b2886b4dbcd013d49f556153da66533c788319a"
+}

@@ -1,0 +1,51 @@
+{
+  "candidate": "distilbert_full_2e-05__original",
+  "base_candidate": "distilbert_full_2e-05",
+  "group": "ml",
+  "kind": "encoder",
+  "training_device": "cuda",
+  "training_precision": "autocast_float16",
+  "training_seconds": 158.5345417859935,
+  "treatment": "original",
+  "variant": "original",
+  "stage": "test",
+  "evaluation_scope": "Exploratory comparison on an existing, previously inspected test set. No fresh independent generalization claim.",
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9874274661508704,
+    "accuracy": 0.9874274661508704,
+    "spam_f1": 0.9477911646586346,
+    "macro_f1": 0.9703221903557053,
+    "precision": 0.9915966386554622,
+    "recall": 0.9076923076923077,
+    "false_positive_rate": 0.0011061946902654867,
+    "tn": 903,
+    "fp": 1,
+    "fn": 12,
+    "tp": 118,
+    "ham_support": 904,
+    "spam_support": 130,
+    "average_precision": 0.9822566487872367,
+    "brier": 0.01486589092205011,
+    "log_loss": 0.07292245185482339
+  },
+  "latency": {
+    "p50_ms": 42.78036899995641,
+    "p95_ms": 77.44717019982089,
+    "mean_ms": 48.58731504002208,
+    "count": 100
+  },
+  "bulk_metric_threads": 6,
+  "warm_latency_threads": 1,
+  "uncertainty": {
+    "f1_ci_low": 0.9199113924050633,
+    "f1_ci_high": 0.9723015364916774,
+    "bootstrap_repetitions": 500,
+    "unit": "template family"
+  },
+  "threshold": 0.9963322281837463,
+  "artifact_sha256": "e911b40fdcc93ea62a77643ff84cbe0529f3d6671d9058e361a678a118507fc3",
+  "cost_usd": null
+}

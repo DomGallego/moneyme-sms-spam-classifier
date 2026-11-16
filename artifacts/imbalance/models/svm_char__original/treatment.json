@@ -1,0 +1,7 @@
+{
+  "treatment": "original",
+  "base_candidate": "svm_char",
+  "pool_sha256": null,
+  "trials": 20,
+  "seed": 42
+}

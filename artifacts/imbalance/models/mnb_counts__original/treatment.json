@@ -1,0 +1,7 @@
+{
+  "treatment": "original",
+  "base_candidate": "mnb_counts",
+  "pool_sha256": null,
+  "trials": 20,
+  "seed": 42
+}

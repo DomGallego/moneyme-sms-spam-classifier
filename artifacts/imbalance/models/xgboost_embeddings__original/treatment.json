@@ -1,0 +1,7 @@
+{
+  "treatment": "original",
+  "base_candidate": "xgboost_embeddings",
+  "pool_sha256": null,
+  "trials": 20,
+  "seed": 42
+}
