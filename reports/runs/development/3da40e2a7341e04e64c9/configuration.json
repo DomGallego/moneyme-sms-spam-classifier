@@ -1,0 +1,6 @@
+{
+  "group": "decision",
+  "model": "microsoft/microsoft-decision-1",
+  "variant": "noul",
+  "primitive": "noul"
+}

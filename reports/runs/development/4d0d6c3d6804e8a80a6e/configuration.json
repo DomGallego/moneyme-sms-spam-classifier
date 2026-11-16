@@ -1,0 +1,7 @@
+{
+  "group": "llm",
+  "model": "openai/gpt-6.1-sol",
+  "variant": "zero_shot",
+  "max_tokens": 2048,
+  "examples": []
+}

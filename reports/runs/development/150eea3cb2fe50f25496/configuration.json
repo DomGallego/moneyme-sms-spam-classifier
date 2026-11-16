@@ -1,0 +1,6 @@
+{
+  "group": "decision",
+  "model": "google/gemini-decision-1",
+  "variant": "choice",
+  "primitive": "choice"
+}

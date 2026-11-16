@@ -1,0 +1,59 @@
+{
+  "candidate": "liquid/d1-ultra",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "c9e8e547624c32b5c258",
+  "configuration": {
+    "group": "decision",
+    "model": "liquid/d1-ultra",
+    "variant": "choice",
+    "primitive": "choice"
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.5246623165651004,
+      "f1": 0.9090909090909091,
+      "precision": 0.8333333333333334,
+      "recall": 1.0,
+      "predicted_spam": 12
+    },
+    "high_precision": null,
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 96,
+    "completed": 89,
+    "coverage": 0.9270833333333334,
+    "end_to_end_accuracy": 0.90625,
+    "accuracy": 0.9775280898876404,
+    "spam_f1": 0.9090909090909091,
+    "macro_f1": 0.9481351981351982,
+    "precision": 0.8333333333333334,
+    "recall": 1.0,
+    "false_positive_rate": 0.02531645569620253,
+    "tn": 77,
+    "fp": 2,
+    "fn": 0,
+    "tp": 10,
+    "ham_support": 79,
+    "spam_support": 10,
+    "average_precision": 0.9733333333333333,
+    "brier": 0.021566074046246577,
+    "log_loss": 0.09054590782720755
+  },
+  "latency": {
+    "p50_ms": 1141.423457500423,
+    "p95_ms": 10178.410565249578,
+    "mean_ms": 3002.0415908541054,
+    "count": 96
+  },
+  "cost_usd": 0.00045863999999999996,
+  "unknown_cost_attempts": 7,
+  "failures": {
+    "http_504": 7
+  },
+  "record_count": 96,
+  "stage": "development"
+}

@@ -1,0 +1,28 @@
+{
+  "group": "llm",
+  "model": "openai/gpt-6.1-sol",
+  "variant": "few_shot",
+  "max_tokens": 2048,
+  "examples": [
+    {
+      "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+      "text": "You are a big chic. Common. Declare",
+      "label": "ham"
+    },
+    {
+      "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+      "text": "Hey happy birthday...",
+      "label": "ham"
+    },
+    {
+      "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+      "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+      "label": "spam"
+    },
+    {
+      "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+      "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+      "label": "spam"
+    }
+  ]
+}

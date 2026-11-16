@@ -1,0 +1,43 @@
+{
+  "candidate": "deepseek/deepseek-v4.1-flash-1017",
+  "group": "llm",
+  "variant": "zero_shot",
+  "configuration_id": "ab3d27c64eebdd5245b6",
+  "configuration": {
+    "group": "llm",
+    "model": "deepseek/deepseek-v4.1-flash-1017",
+    "variant": "zero_shot",
+    "max_tokens": 2048,
+    "examples": []
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 96,
+    "completed": 96,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9583333333333334,
+    "accuracy": 0.9583333333333334,
+    "spam_f1": 0.8333333333333334,
+    "macro_f1": 0.9047619047619048,
+    "precision": 0.8333333333333334,
+    "recall": 0.8333333333333334,
+    "false_positive_rate": 0.023809523809523808,
+    "tn": 82,
+    "fp": 2,
+    "fn": 2,
+    "tp": 10,
+    "ham_support": 84,
+    "spam_support": 12
+  },
+  "latency": {
+    "p50_ms": 788.6149044988997,
+    "p95_ms": 1556.6508882502603,
+    "mean_ms": 871.0229478124726,
+    "count": 96
+  },
+  "cost_usd": 0.0020386228700000003,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 96,
+  "stage": "development"
+}

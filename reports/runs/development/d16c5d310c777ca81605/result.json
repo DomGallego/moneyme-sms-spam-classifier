@@ -1,0 +1,65 @@
+{
+  "candidate": "nace-ai/drex-v2.0",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "d16c5d310c777ca81605",
+  "configuration": {
+    "group": "decision",
+    "model": "nace-ai/drex-v2.0",
+    "variant": "choice",
+    "primitive": "choice"
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.355,
+      "f1": 0.9565217391304348,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "predicted_spam": 11
+    },
+    "high_precision": {
+      "threshold": 0.355,
+      "f1": 0.9565217391304348,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "predicted_spam": 11
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 96,
+    "completed": 92,
+    "coverage": 0.9583333333333334,
+    "end_to_end_accuracy": 0.9479166666666666,
+    "accuracy": 0.9891304347826086,
+    "spam_f1": 0.9565217391304348,
+    "macro_f1": 0.9751552795031055,
+    "precision": 1.0,
+    "recall": 0.9166666666666666,
+    "false_positive_rate": 0.0,
+    "tn": 80,
+    "fp": 0,
+    "fn": 1,
+    "tp": 11,
+    "ham_support": 80,
+    "spam_support": 12,
+    "average_precision": 0.9754901960784312,
+    "brier": 0.01613439304347826,
+    "log_loss": 0.06308846704185363
+  },
+  "latency": {
+    "p50_ms": 727.4597695013654,
+    "p95_ms": 1236.1171302500225,
+    "mean_ms": 805.585773187469,
+    "count": 96
+  },
+  "cost_usd": 0.00057246,
+  "unknown_cost_attempts": 4,
+  "failures": {
+    "http_429": 4
+  },
+  "record_count": 96,
+  "stage": "development"
+}

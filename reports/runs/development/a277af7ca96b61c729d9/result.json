@@ -1,0 +1,63 @@
+{
+  "candidate": "google/gemini-decision-1",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "a277af7ca96b61c729d9",
+  "configuration": {
+    "group": "decision",
+    "model": "google/gemini-decision-1",
+    "variant": "noul",
+    "primitive": "noul"
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.6498742694065037,
+      "f1": 0.9565217391304348,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "predicted_spam": 11
+    },
+    "high_precision": {
+      "threshold": 0.6498742694065037,
+      "f1": 0.9565217391304348,
+      "precision": 1.0,
+      "recall": 0.9166666666666666,
+      "predicted_spam": 11
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 96,
+    "completed": 96,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9895833333333334,
+    "accuracy": 0.9895833333333334,
+    "spam_f1": 0.9565217391304348,
+    "macro_f1": 0.9753022896835606,
+    "precision": 1.0,
+    "recall": 0.9166666666666666,
+    "false_positive_rate": 0.0,
+    "tn": 84,
+    "fp": 0,
+    "fn": 1,
+    "tp": 11,
+    "ham_support": 84,
+    "spam_support": 12,
+    "average_precision": 0.960144927536232,
+    "brier": 0.015005271363874138,
+    "log_loss": 0.07456242273194241
+  },
+  "latency": {
+    "p50_ms": 665.2541479979845,
+    "p95_ms": 776.9317667498399,
+    "mean_ms": 658.5024008540282,
+    "count": 96
+  },
+  "cost_usd": 0.0019144,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 96,
+  "stage": "development"
+}

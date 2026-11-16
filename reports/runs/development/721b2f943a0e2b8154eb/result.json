@@ -1,0 +1,63 @@
+{
+  "candidate": "openai/gpt-6-luna-decisions",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "721b2f943a0e2b8154eb",
+  "configuration": {
+    "group": "decision",
+    "model": "openai/gpt-6-luna-decisions",
+    "variant": "choice",
+    "primitive": "choice"
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.82,
+      "f1": 0.9090909090909091,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "predicted_spam": 10
+    },
+    "high_precision": {
+      "threshold": 0.82,
+      "f1": 0.9090909090909091,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "predicted_spam": 10
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 96,
+    "completed": 96,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9791666666666666,
+    "accuracy": 0.9791666666666666,
+    "spam_f1": 0.9090909090909091,
+    "macro_f1": 0.9486631016042781,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "false_positive_rate": 0.0,
+    "tn": 84,
+    "fp": 0,
+    "fn": 2,
+    "tp": 10,
+    "ham_support": 84,
+    "spam_support": 12,
+    "average_precision": 0.8777006172839507,
+    "brier": 0.021815625,
+    "log_loss": 0.22530245325579748
+  },
+  "latency": {
+    "p50_ms": 532.4230949991033,
+    "p95_ms": 614.277859500362,
+    "mean_ms": 539.176758687366,
+    "count": 96
+  },
+  "cost_usd": 0.0018412,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 96,
+  "stage": "development"
+}

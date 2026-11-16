@@ -1,0 +1,63 @@
+{
+  "candidate": "perplexity/pplx-decider-v1.3:free",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "21aa9763c226a5bd0221",
+  "configuration": {
+    "group": "decision",
+    "model": "perplexity/pplx-decider-v1.3:free",
+    "variant": "noul",
+    "primitive": "noul"
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.5424031671999242,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "predicted_spam": 12
+    },
+    "high_precision": {
+      "threshold": 0.5424031671999242,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "predicted_spam": 12
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 96,
+    "completed": 96,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 1.0,
+    "accuracy": 1.0,
+    "spam_f1": 1.0,
+    "macro_f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0,
+    "tn": 84,
+    "fp": 0,
+    "fn": 0,
+    "tp": 12,
+    "ham_support": 84,
+    "spam_support": 12,
+    "average_precision": 1.0,
+    "brier": 0.0023042648631923725,
+    "log_loss": 0.012301868684835203
+  },
+  "latency": {
+    "p50_ms": 444.31761450141494,
+    "p95_ms": 765.783642250426,
+    "mean_ms": 496.8045251566006,
+    "count": 96
+  },
+  "cost_usd": 0.0,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 96,
+  "stage": "development"
+}

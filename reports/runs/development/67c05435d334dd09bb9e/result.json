@@ -1,0 +1,63 @@
+{
+  "candidate": "typesafe/jev-1.14",
+  "group": "decision",
+  "variant": "choice",
+  "configuration_id": "67c05435d334dd09bb9e",
+  "configuration": {
+    "group": "decision",
+    "model": "typesafe/jev-1.14",
+    "variant": "choice",
+    "primitive": "choice"
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 0.99,
+      "f1": 0.9090909090909091,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "predicted_spam": 10
+    },
+    "high_precision": {
+      "threshold": 0.99,
+      "f1": 0.9090909090909091,
+      "precision": 1.0,
+      "recall": 0.8333333333333334,
+      "predicted_spam": 10
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 96,
+    "completed": 96,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9791666666666666,
+    "accuracy": 0.9791666666666666,
+    "spam_f1": 0.9090909090909091,
+    "macro_f1": 0.9486631016042781,
+    "precision": 1.0,
+    "recall": 0.8333333333333334,
+    "false_positive_rate": 0.0,
+    "tn": 84,
+    "fp": 0,
+    "fn": 2,
+    "tp": 10,
+    "ham_support": 84,
+    "spam_support": 12,
+    "average_precision": 0.9398989898989899,
+    "brier": 0.021013541666666663,
+    "log_loss": 0.07480223978361335
+  },
+  "latency": {
+    "p50_ms": 488.53237599905697,
+    "p95_ms": 746.5395252520466,
+    "mean_ms": 525.1561415937355,
+    "count": 96
+  },
+  "cost_usd": 0.0016060380000000002,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 96,
+  "stage": "development"
+}

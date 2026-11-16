@@ -1,0 +1,6 @@
+{
+  "group": "decision",
+  "model": "nace-ai/drex-v2.0",
+  "variant": "choice",
+  "primitive": "choice"
+}

@@ -1,0 +1,43 @@
+{
+  "candidate": "qwen/qwen3.8-flash",
+  "group": "llm",
+  "variant": "zero_shot",
+  "configuration_id": "5ecbe31dd979931d1e90",
+  "configuration": {
+    "group": "llm",
+    "model": "qwen/qwen3.8-flash",
+    "variant": "zero_shot",
+    "max_tokens": 2048,
+    "examples": []
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 96,
+    "completed": 96,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9791666666666666,
+    "accuracy": 0.9791666666666666,
+    "spam_f1": 0.9166666666666666,
+    "macro_f1": 0.9523809523809523,
+    "precision": 0.9166666666666666,
+    "recall": 0.9166666666666666,
+    "false_positive_rate": 0.011904761904761904,
+    "tn": 83,
+    "fp": 1,
+    "fn": 1,
+    "tp": 11,
+    "ham_support": 84,
+    "spam_support": 12
+  },
+  "latency": {
+    "p50_ms": 836.2289659999078,
+    "p95_ms": 1377.9566392495326,
+    "mean_ms": 836.7434949373092,
+    "count": 96
+  },
+  "cost_usd": 0.0023892,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 96,
+  "stage": "development"
+}

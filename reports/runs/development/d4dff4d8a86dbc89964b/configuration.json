@@ -1,0 +1,7 @@
+{
+  "group": "llm",
+  "model": "google/gemini-4-hydrogen",
+  "variant": "zero_shot",
+  "max_tokens": 2048,
+  "examples": []
+}
