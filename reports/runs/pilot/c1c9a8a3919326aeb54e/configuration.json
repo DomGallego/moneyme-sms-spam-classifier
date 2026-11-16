@@ -1,0 +1,6 @@
+{
+  "group": "decision",
+  "model": "perplexity/pplx-decider-v1.3:free",
+  "variant": "choice",
+  "primitive": "choice"
+}

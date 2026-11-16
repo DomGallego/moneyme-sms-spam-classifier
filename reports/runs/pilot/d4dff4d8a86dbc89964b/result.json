@@ -1,0 +1,43 @@
+{
+  "candidate": "google/gemini-4-hydrogen",
+  "group": "llm",
+  "variant": "zero_shot",
+  "configuration_id": "d4dff4d8a86dbc89964b",
+  "configuration": {
+    "group": "llm",
+    "model": "google/gemini-4-hydrogen",
+    "variant": "zero_shot",
+    "max_tokens": 2048,
+    "examples": []
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 8,
+    "completed": 8,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 1.0,
+    "accuracy": 1.0,
+    "spam_f1": 1.0,
+    "macro_f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0,
+    "tn": 7,
+    "fp": 0,
+    "fn": 0,
+    "tp": 1,
+    "ham_support": 7,
+    "spam_support": 1
+  },
+  "latency": {
+    "p50_ms": 1401.2491425000917,
+    "p95_ms": 1479.831641101191,
+    "mean_ms": 1381.3643337507528,
+    "count": 8
+  },
+  "cost_usd": 0.008568,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 8,
+  "stage": "pilot"
+}

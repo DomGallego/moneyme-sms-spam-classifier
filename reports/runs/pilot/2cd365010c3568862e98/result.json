@@ -1,0 +1,59 @@
+{
+  "candidate": "openai/gpt-6-luna-decisions",
+  "group": "decision",
+  "variant": "noul",
+  "configuration_id": "2cd365010c3568862e98",
+  "configuration": {
+    "group": "decision",
+    "model": "openai/gpt-6-luna-decisions",
+    "variant": "noul",
+    "primitive": "noul"
+  },
+  "thresholds": {
+    "primary": {
+      "threshold": 1.0,
+      "f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "predicted_spam": 1
+    },
+    "high_precision": null,
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "metrics": {
+    "attempted": 8,
+    "completed": 7,
+    "coverage": 0.875,
+    "end_to_end_accuracy": 0.875,
+    "accuracy": 1.0,
+    "spam_f1": 1.0,
+    "macro_f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0,
+    "tn": 6,
+    "fp": 0,
+    "fn": 0,
+    "tp": 1,
+    "ham_support": 6,
+    "spam_support": 1,
+    "average_precision": 1.0,
+    "brier": 1.42857142857143e-05,
+    "log_loss": 0.0014358479790758762
+  },
+  "latency": {
+    "p50_ms": 526.64668000034,
+    "p95_ms": 546.3872451011412,
+    "mean_ms": 519.0802237498247,
+    "count": 8
+  },
+  "cost_usd": 0.00017040000000000002,
+  "unknown_cost_attempts": 1,
+  "failures": {
+    "http_502": 1
+  },
+  "record_count": 8,
+  "stage": "pilot"
+}

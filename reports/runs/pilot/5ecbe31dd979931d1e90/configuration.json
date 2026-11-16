@@ -1,0 +1,7 @@
+{
+  "group": "llm",
+  "model": "qwen/qwen3.8-flash",
+  "variant": "zero_shot",
+  "max_tokens": 2048,
+  "examples": []
+}

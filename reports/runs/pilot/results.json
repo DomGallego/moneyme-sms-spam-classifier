@@ -1,0 +1,1551 @@
+[
+  {
+    "candidate": "openai/gpt-6-luna",
+    "group": "llm",
+    "variant": "zero_shot",
+    "configuration_id": "147702b23727c0277635",
+    "configuration": {
+      "group": "llm",
+      "model": "openai/gpt-6-luna",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1952.5544765001541,
+      "p95_ms": 2963.092961951224,
+      "mean_ms": 1993.397917125094,
+      "count": 8
+    },
+    "cost_usd": 0.00017989999999999998,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "openai/gpt-6-luna",
+    "group": "llm",
+    "variant": "few_shot",
+    "configuration_id": "e03d54c03037de4d96c6",
+    "configuration": {
+      "group": "llm",
+      "model": "openai/gpt-6-luna",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1160.2582764990075,
+      "p95_ms": 1494.6409682017472,
+      "mean_ms": 1228.89921887554,
+      "count": 8
+    },
+    "cost_usd": 0.0003207,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "anthropic/claude-haiku-5.5",
+    "group": "llm",
+    "variant": "zero_shot",
+    "configuration_id": "6b938fd3731963788ba3",
+    "configuration": {
+      "group": "llm",
+      "model": "anthropic/claude-haiku-5.5",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1841.1196875003952,
+      "p95_ms": 2429.3799122006017,
+      "mean_ms": 1834.1631277494344,
+      "count": 8
+    },
+    "cost_usd": 0.0003742,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "anthropic/claude-haiku-5.5",
+    "group": "llm",
+    "variant": "few_shot",
+    "configuration_id": "7e9a8091b74511b25f1a",
+    "configuration": {
+      "group": "llm",
+      "model": "anthropic/claude-haiku-5.5",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1284.974913498445,
+      "p95_ms": 1333.6557037016973,
+      "mean_ms": 1262.9474848745303,
+      "count": 8
+    },
+    "cost_usd": 0.0005542,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "qwen/qwen3.8-flash",
+    "group": "llm",
+    "variant": "zero_shot",
+    "configuration_id": "5ecbe31dd979931d1e90",
+    "configuration": {
+      "group": "llm",
+      "model": "qwen/qwen3.8-flash",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 864.7391619997506,
+      "p95_ms": 2176.3625277008027,
+      "mean_ms": 1197.05278650099,
+      "count": 8
+    },
+    "cost_usd": 0.00019309999999999998,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "qwen/qwen3.8-flash",
+    "group": "llm",
+    "variant": "few_shot",
+    "configuration_id": "04e0862679a91b2fa823",
+    "configuration": {
+      "group": "llm",
+      "model": "qwen/qwen3.8-flash",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 648.1037774974538,
+      "p95_ms": 1201.11347919792,
+      "mean_ms": 756.703711249429,
+      "count": 8
+    },
+    "cost_usd": 0.000233436,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "google/gemini-4-hydrogen",
+    "group": "llm",
+    "variant": "zero_shot",
+    "configuration_id": "d4dff4d8a86dbc89964b",
+    "configuration": {
+      "group": "llm",
+      "model": "google/gemini-4-hydrogen",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1401.2491425000917,
+      "p95_ms": 1479.831641101191,
+      "mean_ms": 1381.3643337507528,
+      "count": 8
+    },
+    "cost_usd": 0.008568,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "google/gemini-4-hydrogen",
+    "group": "llm",
+    "variant": "few_shot",
+    "configuration_id": "2f7e30aaff23ef2f7298",
+    "configuration": {
+      "group": "llm",
+      "model": "google/gemini-4-hydrogen",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1308.4045499999775,
+      "p95_ms": 1637.8577625499017,
+      "mean_ms": 1341.2551685000835,
+      "count": 8
+    },
+    "cost_usd": 0.0110175,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "openai/gpt-6.1-sol",
+    "group": "llm",
+    "variant": "zero_shot",
+    "configuration_id": "4d0d6c3d6804e8a80a6e",
+    "configuration": {
+      "group": "llm",
+      "model": "openai/gpt-6.1-sol",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1869.8399304994382,
+      "p95_ms": 1944.1431633495085,
+      "mean_ms": 1880.8831203750742,
+      "count": 8
+    },
+    "cost_usd": 0.003598,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "openai/gpt-6.1-sol",
+    "group": "llm",
+    "variant": "few_shot",
+    "configuration_id": "8f70576fcc6ba9589782",
+    "configuration": {
+      "group": "llm",
+      "model": "openai/gpt-6.1-sol",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 2042.732475001685,
+      "p95_ms": 2246.5852651481327,
+      "mean_ms": 2033.2042740005818,
+      "count": 8
+    },
+    "cost_usd": 0.006414,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "deepseek/deepseek-v4.1-flash-1017",
+    "group": "llm",
+    "variant": "zero_shot",
+    "configuration_id": "ab3d27c64eebdd5245b6",
+    "configuration": {
+      "group": "llm",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 791.0028739988775,
+      "p95_ms": 1852.6180530998315,
+      "mean_ms": 934.0685817492158,
+      "count": 8
+    },
+    "cost_usd": 0.00012344271999999997,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "deepseek/deepseek-v4.1-flash-1017",
+    "group": "llm",
+    "variant": "few_shot",
+    "configuration_id": "248c655aa43f3c701063",
+    "configuration": {
+      "group": "llm",
+      "model": "deepseek/deepseek-v4.1-flash-1017",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1193.1449130006513,
+      "p95_ms": 1333.9587814496554,
+      "mean_ms": 1143.2018092500584,
+      "count": 8
+    },
+    "cost_usd": 0.00018029200000000003,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "meta/muse-ember",
+    "group": "llm",
+    "variant": "zero_shot",
+    "configuration_id": "643cfdc3f1385160fd61",
+    "configuration": {
+      "group": "llm",
+      "model": "meta/muse-ember",
+      "variant": "zero_shot",
+      "max_tokens": 2048,
+      "examples": []
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1097.1244880020095,
+      "p95_ms": 2468.4913596007386,
+      "mean_ms": 1398.555327376016,
+      "count": 8
+    },
+    "cost_usd": 0.0007903,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "meta/muse-ember",
+    "group": "llm",
+    "variant": "few_shot",
+    "configuration_id": "8be7ef9e4aaa33d1b340",
+    "configuration": {
+      "group": "llm",
+      "model": "meta/muse-ember",
+      "variant": "few_shot",
+      "max_tokens": 2048,
+      "examples": [
+        {
+          "id": "53c98144ea225ab44c40602b8e0fc16c2fb1ffa9f997128c8f3557ea1588c17c",
+          "text": "You are a big chic. Common. Declare",
+          "label": "ham"
+        },
+        {
+          "id": "1b7c31ab9686265d8dd0ce605c11490d6a9301f75992995494fc072ad52a0747",
+          "text": "Hey happy birthday...",
+          "label": "ham"
+        },
+        {
+          "id": "5d4b000e1312f17a68ee4b94bdec56d355fa482983503f1de52b1b8fefe20a72",
+          "text": "Hello. We need some posh birds and chaps to user trial prods for champneys. Can i put you down? I need your address and dob asap. Ta r",
+          "label": "spam"
+        },
+        {
+          "id": "fab2c73784fd1c0ae34135a2e318567c1d2e2a92d7b1993b449dce4a76f8e9f1",
+          "text": "Hi there, 2nights ur lucky night! Uve been invited 2 XCHAT, the Uks wildest chat! Txt CHAT to 86688 now! 150p/MsgrcvdHG/Suite342/2Lands/Row/W1J6HL LDN 18yrs",
+          "label": "spam"
+        }
+      ]
+    },
+    "thresholds": null,
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1
+    },
+    "latency": {
+      "p50_ms": 1730.248523001137,
+      "p95_ms": 2650.5297991010593,
+      "mean_ms": 1770.2093767506994,
+      "count": 8
+    },
+    "cost_usd": 0.0009075559999999999,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "typesafe/jev-1.14",
+    "group": "decision",
+    "variant": "choice",
+    "configuration_id": "67c05435d334dd09bb9e",
+    "configuration": {
+      "group": "decision",
+      "model": "typesafe/jev-1.14",
+      "variant": "choice",
+      "primitive": "choice"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 1.0,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.0,
+      "log_loss": 1.0000000494736474e-07
+    },
+    "latency": {
+      "p50_ms": 2413.542205498743,
+      "p95_ms": 2538.620935499239,
+      "mean_ms": 1939.1565201244703,
+      "count": 8
+    },
+    "cost_usd": 0.00013217399999999999,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "typesafe/jev-1.14",
+    "group": "decision",
+    "variant": "noul",
+    "configuration_id": "546049c2ec30a27b5474",
+    "configuration": {
+      "group": "decision",
+      "model": "typesafe/jev-1.14",
+      "variant": "noul",
+      "primitive": "noul"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.99,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.0006000000000000006,
+      "log_loss": 0.022806150393654204
+    },
+    "latency": {
+      "p50_ms": 481.44375949959795,
+      "p95_ms": 752.5208082015522,
+      "mean_ms": 524.6695158757575,
+      "count": 8
+    },
+    "cost_usd": 0.000128478,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "perplexity/pplx-decider-v1.3:free",
+    "group": "decision",
+    "variant": "choice",
+    "configuration_id": "c1c9a8a3919326aeb54e",
+    "configuration": {
+      "group": "decision",
+      "model": "perplexity/pplx-decider-v1.3:free",
+      "variant": "choice",
+      "primitive": "choice"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9793253759603808,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 7.708182227965119e-05,
+      "log_loss": 0.006521591569628989
+    },
+    "latency": {
+      "p50_ms": 697.291287000553,
+      "p95_ms": 1045.5413056995894,
+      "mean_ms": 722.044298000128,
+      "count": 8
+    },
+    "cost_usd": 0.0,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "perplexity/pplx-decider-v1.3:free",
+    "group": "decision",
+    "variant": "noul",
+    "configuration_id": "21aa9763c226a5bd0221",
+    "configuration": {
+      "group": "decision",
+      "model": "perplexity/pplx-decider-v1.3:free",
+      "variant": "noul",
+      "primitive": "noul"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9933920078964528,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 2.561911304451976e-05,
+      "log_loss": 0.004538597074569935
+    },
+    "latency": {
+      "p50_ms": 491.41995199715893,
+      "p95_ms": 876.5118504983545,
+      "mean_ms": 581.000249373119,
+      "count": 8
+    },
+    "cost_usd": 0.0,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "nace-ai/drex-v2.0",
+    "group": "decision",
+    "variant": "choice",
+    "configuration_id": "d16c5d310c777ca81605",
+    "configuration": {
+      "group": "decision",
+      "model": "nace-ai/drex-v2.0",
+      "variant": "choice",
+      "primitive": "choice"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9986,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.0002065962500000001,
+      "log_loss": 0.011592297541332721
+    },
+    "latency": {
+      "p50_ms": 986.538497998481,
+      "p95_ms": 1669.2409008483078,
+      "mean_ms": 1118.5886009993737,
+      "count": 8
+    },
+    "cost_usd": 4.716e-05,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "nace-ai/drex-v2.0",
+    "group": "decision",
+    "variant": "noul",
+    "configuration_id": "5e364616a5963bda6cc6",
+    "configuration": {
+      "group": "decision",
+      "model": "nace-ai/drex-v2.0",
+      "variant": "noul",
+      "primitive": "noul"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9974,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 5.88025000000001e-05,
+      "log_loss": 0.006654604043619398
+    },
+    "latency": {
+      "p50_ms": 745.8530820003944,
+      "p95_ms": 960.7468256501306,
+      "mean_ms": 741.8945395002083,
+      "count": 8
+    },
+    "cost_usd": 4.955999999999999e-05,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "liquid/d1-ultra",
+    "group": "decision",
+    "variant": "choice",
+    "configuration_id": "c9e8e547624c32b5c258",
+    "configuration": {
+      "group": "decision",
+      "model": "liquid/d1-ultra",
+      "variant": "choice",
+      "primitive": "choice"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9871831232532983,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.0017558636482778145,
+      "log_loss": 0.03331423052677519
+    },
+    "latency": {
+      "p50_ms": 957.1136190024845,
+      "p95_ms": 4350.36967914966,
+      "mean_ms": 1613.5007763750764,
+      "count": 8
+    },
+    "cost_usd": 3.9269999999999995e-05,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "liquid/d1-ultra",
+    "group": "decision",
+    "variant": "noul",
+    "configuration_id": "0aa0df2bf06fe1309215",
+    "configuration": {
+      "group": "decision",
+      "model": "liquid/d1-ultra",
+      "variant": "noul",
+      "primitive": "noul"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9734966301888833,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.0031930815663269146,
+      "log_loss": 0.0401884481926504
+    },
+    "latency": {
+      "p50_ms": 860.0423945008515,
+      "p95_ms": 4284.925982849015,
+      "mean_ms": 1537.083557124788,
+      "count": 8
+    },
+    "cost_usd": 4.095e-05,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "google/gemini-decision-1",
+    "group": "decision",
+    "variant": "choice",
+    "configuration_id": "150eea3cb2fe50f25496",
+    "configuration": {
+      "group": "decision",
+      "model": "google/gemini-decision-1",
+      "variant": "choice",
+      "primitive": "choice"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9934132493282465,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.00038633356044396754,
+      "log_loss": 0.016796759426277043
+    },
+    "latency": {
+      "p50_ms": 750.2159450014005,
+      "p95_ms": 960.397077399466,
+      "mean_ms": 761.6604552499666,
+      "count": 8
+    },
+    "cost_usd": 0.0001342,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "google/gemini-decision-1",
+    "group": "decision",
+    "variant": "noul",
+    "configuration_id": "a277af7ca96b61c729d9",
+    "configuration": {
+      "group": "decision",
+      "model": "google/gemini-decision-1",
+      "variant": "noul",
+      "primitive": "noul"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9660409665475977,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.0008911190615200283,
+      "log_loss": 0.02734848835866035
+    },
+    "latency": {
+      "p50_ms": 692.0252370000526,
+      "p95_ms": 798.1768159994316,
+      "mean_ms": 679.5894918750491,
+      "count": 8
+    },
+    "cost_usd": 0.00015580000000000002,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "openai/gpt-6-luna-decisions",
+    "group": "decision",
+    "variant": "choice",
+    "configuration_id": "721b2f943a0e2b8154eb",
+    "configuration": {
+      "group": "decision",
+      "model": "openai/gpt-6-luna-decisions",
+      "variant": "choice",
+      "primitive": "choice"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.99,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 0.008225,
+      "log_loss": 0.04734979512831597
+    },
+    "latency": {
+      "p50_ms": 654.9339285011229,
+      "p95_ms": 1023.8397382508991,
+      "mean_ms": 706.9140638755016,
+      "count": 8
+    },
+    "cost_usd": 0.00014869999999999998,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "openai/gpt-6-luna-decisions",
+    "group": "decision",
+    "variant": "noul",
+    "configuration_id": "2cd365010c3568862e98",
+    "configuration": {
+      "group": "decision",
+      "model": "openai/gpt-6-luna-decisions",
+      "variant": "noul",
+      "primitive": "noul"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 1.0,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 7,
+      "coverage": 0.875,
+      "end_to_end_accuracy": 0.875,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 6,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 6,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 1.42857142857143e-05,
+      "log_loss": 0.0014358479790758762
+    },
+    "latency": {
+      "p50_ms": 526.64668000034,
+      "p95_ms": 546.3872451011412,
+      "mean_ms": 519.0802237498247,
+      "count": 8
+    },
+    "cost_usd": 0.00017040000000000002,
+    "unknown_cost_attempts": 1,
+    "failures": {
+      "http_502": 1
+    },
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "microsoft/microsoft-decision-1",
+    "group": "decision",
+    "variant": "choice",
+    "configuration_id": "83b39e4f5003fe3c2071",
+    "configuration": {
+      "group": "decision",
+      "model": "microsoft/microsoft-decision-1",
+      "variant": "choice",
+      "primitive": "choice"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9996646500088103,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 4.032573957215144e-08,
+      "log_loss": 0.0001810307158147589
+    },
+    "latency": {
+      "p50_ms": 1150.6755570007954,
+      "p95_ms": 1770.3335272994082,
+      "mean_ms": 1155.0096056253096,
+      "count": 8
+    },
+    "cost_usd": 3.6708e-05,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  },
+  {
+    "candidate": "microsoft/microsoft-decision-1",
+    "group": "decision",
+    "variant": "noul",
+    "configuration_id": "3da40e2a7341e04e64c9",
+    "configuration": {
+      "group": "decision",
+      "model": "microsoft/microsoft-decision-1",
+      "variant": "noul",
+      "primitive": "noul"
+    },
+    "thresholds": {
+      "primary": {
+        "threshold": 0.9994472207827655,
+        "f1": 1.0,
+        "precision": 1.0,
+        "recall": 1.0,
+        "predicted_spam": 1
+      },
+      "high_precision": null,
+      "precision_target": 0.98,
+      "minimum_positive_predictions": 10,
+      "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+    },
+    "metrics": {
+      "attempted": 8,
+      "completed": 8,
+      "coverage": 1.0,
+      "end_to_end_accuracy": 1.0,
+      "accuracy": 1.0,
+      "spam_f1": 1.0,
+      "macro_f1": 1.0,
+      "precision": 1.0,
+      "recall": 1.0,
+      "false_positive_rate": 0.0,
+      "tn": 7,
+      "fp": 0,
+      "fn": 0,
+      "tp": 1,
+      "ham_support": 7,
+      "spam_support": 1,
+      "average_precision": 1.0,
+      "brier": 3.030846855369412e-07,
+      "log_loss": 0.0004945918887037441
+    },
+    "latency": {
+      "p50_ms": 555.5711239994707,
+      "p95_ms": 569.4742083485835,
+      "mean_ms": 549.4592259992714,
+      "count": 8
+    },
+    "cost_usd": 3.9059999999999995e-05,
+    "unknown_cost_attempts": 0,
+    "failures": {},
+    "record_count": 8,
+    "stage": "pilot"
+  }
+]

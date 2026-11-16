@@ -1,0 +1,43 @@
+{
+  "candidate": "meta/muse-ember",
+  "group": "llm",
+  "variant": "zero_shot",
+  "configuration_id": "643cfdc3f1385160fd61",
+  "configuration": {
+    "group": "llm",
+    "model": "meta/muse-ember",
+    "variant": "zero_shot",
+    "max_tokens": 2048,
+    "examples": []
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 8,
+    "completed": 8,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 1.0,
+    "accuracy": 1.0,
+    "spam_f1": 1.0,
+    "macro_f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0,
+    "tn": 7,
+    "fp": 0,
+    "fn": 0,
+    "tp": 1,
+    "ham_support": 7,
+    "spam_support": 1
+  },
+  "latency": {
+    "p50_ms": 1097.1244880020095,
+    "p95_ms": 2468.4913596007386,
+    "mean_ms": 1398.555327376016,
+    "count": 8
+  },
+  "cost_usd": 0.0007903,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 8,
+  "stage": "pilot"
+}

@@ -1,0 +1,43 @@
+{
+  "candidate": "anthropic/claude-haiku-5.5",
+  "group": "llm",
+  "variant": "zero_shot",
+  "configuration_id": "6b938fd3731963788ba3",
+  "configuration": {
+    "group": "llm",
+    "model": "anthropic/claude-haiku-5.5",
+    "variant": "zero_shot",
+    "max_tokens": 2048,
+    "examples": []
+  },
+  "thresholds": null,
+  "metrics": {
+    "attempted": 8,
+    "completed": 8,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 1.0,
+    "accuracy": 1.0,
+    "spam_f1": 1.0,
+    "macro_f1": 1.0,
+    "precision": 1.0,
+    "recall": 1.0,
+    "false_positive_rate": 0.0,
+    "tn": 7,
+    "fp": 0,
+    "fn": 0,
+    "tp": 1,
+    "ham_support": 7,
+    "spam_support": 1
+  },
+  "latency": {
+    "p50_ms": 1841.1196875003952,
+    "p95_ms": 2429.3799122006017,
+    "mean_ms": 1834.1631277494344,
+    "count": 8
+  },
+  "cost_usd": 0.0003742,
+  "unknown_cost_attempts": 0,
+  "failures": {},
+  "record_count": 8,
+  "stage": "pilot"
+}
