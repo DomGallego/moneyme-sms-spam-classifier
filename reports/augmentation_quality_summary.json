@@ -1,0 +1,13 @@
+{
+  "original_spam": 392,
+  "accepted_pool": 2550,
+  "selected_full_training": 2318,
+  "pool_parent_coverage": 382,
+  "selected_parent_coverage": 382,
+  "maximum_selected_variants_per_parent": 9,
+  "rejection_reasons": {
+    "new_contact_or_number": 115,
+    "duplicate": 9
+  },
+  "scope": "Integrity and distribution diagnostics only; inherited labels are not independently verified."
+}

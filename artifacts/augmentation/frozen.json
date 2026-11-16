@@ -1,0 +1,7 @@
+{
+  "pool_sha256": "569f43ba3c4ea7a1f2f373d87ec9b031a8cc0cc67c0935d686ff59d4a370a4cc",
+  "rows": 2550,
+  "generation_configuration_id": "5a9c199b94595bb361a7c0c116d528d0bd24956a5c04b67614731798a85a2628",
+  "duplicate_filter": "Normalized exact-match exclusion against all original corpus messages; no evaluation messages sent to generator.",
+  "note": "Enough accepted variants for full-training balance and every CV fitting partition; generation complete."
+}

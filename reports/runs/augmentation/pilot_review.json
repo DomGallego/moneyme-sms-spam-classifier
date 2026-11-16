@@ -1,0 +1,14 @@
+{
+  "reviewer": "assistant qualitative review; not independent human annotation",
+  "parents_reviewed": 12,
+  "variants_reviewed": 24,
+  "selection": "first two accepted variants per pilot parent",
+  "observations": [
+    "Sampled variants broadly preserve source solicitation, action, price and contact details.",
+    "Conversational product-trial source has an ambiguous original label; augmentation preserves supplied intent rather than resolving its label.",
+    "Malformed URL-only source offers limited lexical diversity."
+  ],
+  "decision": "Proceed with the frozen prompt, automated integrity filters and documented label-noise limitation.",
+  "pilot_accepted": 67,
+  "pilot_requests": 12
+}
