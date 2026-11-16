@@ -1,0 +1,49 @@
+{
+  "candidate": "ridge_word__smote",
+  "base_candidate": "ridge_word",
+  "group": "ml",
+  "kind": "classical",
+  "training_device": "cpu",
+  "training_precision": null,
+  "training_seconds": 12.116447089996655,
+  "treatment": "smote",
+  "variant": "smote",
+  "stage": "test",
+  "evaluation_scope": "Exploratory comparison on an existing, previously inspected test set. No fresh independent generalization claim.",
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9477756286266924,
+    "accuracy": 0.9477756286266924,
+    "spam_f1": 0.7874015748031497,
+    "macro_f1": 0.8788165536639784,
+    "precision": 0.8064516129032258,
+    "recall": 0.7692307692307693,
+    "false_positive_rate": 0.02654867256637168,
+    "tn": 880,
+    "fp": 24,
+    "fn": 30,
+    "tp": 100,
+    "ham_support": 904,
+    "spam_support": 130,
+    "average_precision": 0.8408494926993236
+  },
+  "latency": {
+    "p50_ms": 0.6755320000593201,
+    "p95_ms": 1.1374699492989748,
+    "mean_ms": 0.7367285399959655,
+    "count": 100
+  },
+  "bulk_metric_threads": 1,
+  "warm_latency_threads": 1,
+  "uncertainty": {
+    "f1_ci_low": 0.7227391050014624,
+    "f1_ci_high": 0.8411292351559879,
+    "bootstrap_repetitions": 500,
+    "unit": "template family"
+  },
+  "threshold": 0.11875105105479755,
+  "artifact_sha256": "48bc19bec185bce82d9a4efa7822a9bdc56e7f89836ecebc2401e77f8044def8",
+  "cost_usd": null
+}

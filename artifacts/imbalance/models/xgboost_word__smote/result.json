@@ -1,0 +1,71 @@
+{
+  "candidate": "xgboost_word__smote",
+  "group": "ml",
+  "kind": "classical",
+  "cv_f1": 0.8789072768301722,
+  "training_seconds": 525.3704474599999,
+  "parameters": {
+    "features__sublinear_tf": false,
+    "features__ngram_range": [
+      1,
+      1
+    ],
+    "features__min_df": 2,
+    "classifier__subsample": 0.8,
+    "classifier__scale_pos_weight": 4,
+    "classifier__n_estimators": 200,
+    "classifier__min_child_weight": 1,
+    "classifier__max_depth": 4,
+    "classifier__learning_rate": 0.1,
+    "classifier__colsample_bytree": 0.7
+  },
+  "probabilities": true,
+  "thresholds": {
+    "primary": {
+      "threshold": 0.6539418697357178,
+      "f1": 0.9047619047619048,
+      "precision": 0.9421487603305785,
+      "recall": 0.8702290076335878,
+      "predicted_spam": 121
+    },
+    "high_precision": {
+      "threshold": 0.9389322996139526,
+      "f1": 0.8214285714285714,
+      "precision": 0.989247311827957,
+      "recall": 0.7022900763358778,
+      "predicted_spam": 93
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "validation": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9768115942028985,
+    "accuracy": 0.9768115942028985,
+    "spam_f1": 0.9047619047619048,
+    "macro_f1": 0.9457802923149458,
+    "precision": 0.9421487603305785,
+    "recall": 0.8702290076335878,
+    "false_positive_rate": 0.007743362831858407,
+    "tn": 897,
+    "fp": 7,
+    "fn": 17,
+    "tp": 114,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.9342504998118452,
+    "brier": 0.025465169564112804,
+    "log_loss": 0.10608917126261012
+  },
+  "artifact_bytes": 90186,
+  "base_candidate": "xgboost_word",
+  "treatment": "smote",
+  "fitted_class_counts": [
+    2710,
+    2710
+  ],
+  "model_sha256": "8a7921f3b1f41568167d5094c3a11ecdfd08bafe5dc849e1bc279bad96e472c8"
+}

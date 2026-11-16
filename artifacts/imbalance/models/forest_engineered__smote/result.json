@@ -1,0 +1,62 @@
+{
+  "candidate": "forest_engineered__smote",
+  "group": "ml",
+  "kind": "classical",
+  "cv_f1": 0.9320814850878142,
+  "training_seconds": 30.613387450997834,
+  "parameters": {
+    "classifier__min_samples_leaf": 4,
+    "classifier__max_features": "sqrt",
+    "classifier__max_depth": 20,
+    "classifier__class_weight": null
+  },
+  "probabilities": true,
+  "thresholds": {
+    "primary": {
+      "threshold": 0.640478429894542,
+      "f1": 0.9182879377431906,
+      "precision": 0.9365079365079365,
+      "recall": 0.9007633587786259,
+      "predicted_spam": 126
+    },
+    "high_precision": {
+      "threshold": 0.7651659904423063,
+      "f1": 0.8962655601659751,
+      "precision": 0.9818181818181818,
+      "recall": 0.8244274809160306,
+      "predicted_spam": 110
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "validation": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9797101449275363,
+    "accuracy": 0.9797101449275363,
+    "spam_f1": 0.9182879377431906,
+    "macro_f1": 0.9533524630800896,
+    "precision": 0.9365079365079365,
+    "recall": 0.9007633587786259,
+    "false_positive_rate": 0.008849557522123894,
+    "tn": 896,
+    "fp": 8,
+    "fn": 13,
+    "tp": 118,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.9566991095230309,
+    "brier": 0.02150239979732605,
+    "log_loss": 0.08232612343355418
+  },
+  "artifact_bytes": 553330,
+  "base_candidate": "forest_engineered",
+  "treatment": "smote",
+  "fitted_class_counts": [
+    2710,
+    2710
+  ],
+  "model_sha256": "1ee4837dc282b31d056c7c5dafcdcc5a016f8aeaabac4a66383feb5df30ad7d6"
+}

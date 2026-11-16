@@ -1,0 +1,7 @@
+{
+  "treatment": "smote",
+  "base_candidate": "forest_word",
+  "pool_sha256": null,
+  "trials": 20,
+  "seed": 42
+}
