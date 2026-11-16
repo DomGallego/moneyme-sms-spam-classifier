@@ -1,0 +1,7 @@
+{
+  "cpu_settings": ["distilbert_full_5e-05"],
+  "cpu_precision": "float32",
+  "cpu_padding": "dynamic padding with seeded length-grouped training batches; max_length remains 128",
+  "other_settings": "Auto device selection; this execution uses CUDA with float16 autocast for the other settings",
+  "reason": "Recurring WSL dxgvmb GPU-driver stalls. The 5e-05 setting uses CPU for both original and augmented arms to keep its paired hardware and precision matched."
+}

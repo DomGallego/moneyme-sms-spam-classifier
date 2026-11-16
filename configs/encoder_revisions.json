@@ -1,0 +1,10 @@
+{
+  "sentence-transformers/all-MiniLM-L6-v2": {
+    "revision": "1110a243fdf4706b3f48f1d95db1a4f5529b4d41",
+    "path": "/home/dom/moneyme-sms-spam-classifier/.cache/huggingface/hub/models--sentence-transformers--all-MiniLM-L6-v2/snapshots/1110a243fdf4706b3f48f1d95db1a4f5529b4d41"
+  },
+  "distilbert/distilbert-base-uncased": {
+    "revision": "12040accade4e8a0f71eabdb258fecc2e7e948be",
+    "path": "/home/dom/moneyme-sms-spam-classifier/.cache/huggingface/hub/models--distilbert--distilbert-base-uncased/snapshots/12040accade4e8a0f71eabdb258fecc2e7e948be"
+  }
+}
