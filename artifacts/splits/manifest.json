@@ -1,0 +1,29 @@
+{
+  "raw_sha256": "7d039a24a6083ed9ef0f806ebad56bbb976e3aeb8de05669173bfdc4996c239d",
+  "seed": 42,
+  "raw_rows": 5574,
+  "raw_labels": {
+    "ham": 4827,
+    "spam": 747
+  },
+  "unique_rows": 5171,
+  "duplicates_removed": 403,
+  "groups": 5138,
+  "grouped_rows": 61,
+  "grouping_rule": "casefold/whitespace; long >=8-word messages mask URLs/digits",
+  "split_counts": {
+    "test": {
+      "ham": 904,
+      "spam": 130
+    },
+    "train": {
+      "ham": 2710,
+      "spam": 392
+    },
+    "validation": {
+      "ham": 904,
+      "spam": 131
+    }
+  },
+  "dataset_sha256": "70ef47aeab1ad5f3856d0c1d5d5ae583a0905cdea159fae9af63d81e06d65dff"
+}
