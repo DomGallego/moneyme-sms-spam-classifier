@@ -1,6 +1,6 @@
 # Assessment deliverable checklist
 
-Checked against the supplied MoneyMe Technical Challenge guide on 16 November 2026. The technical implementation is complete; repository publication and email submission remain separate steps.
+Checked against the supplied MoneyMe Technical Challenge guide on 16 November 2026, with committed-checkout verification on 17 November 2026. The technical implementation is committed; repository publication and email submission remain separate steps.
 
 ## Task 1: modelling
 
@@ -35,13 +35,15 @@ The guide does not require every model to occupy its own Python file. The standa
 - The guide asks for APIs reviewers can run in their environment. It does not require a publicly hosted service or a cloud deployment.
 - Verification includes 27 passing automated tests, lint/format checks, ten executed notebook cells, container checks, preserved artifact hashes, fold-isolation checks and a Git-visible secret scan. See [final audit](../reports/runs/imbalance/final_audit.json).
 - The [repository audit](../reports/repository_audit.json) records the subsequent review of all Git-eligible files, documentation links and diagrams, notebook execution, saved prediction metrics, lockfile consistency, cost accounting, and local/clean-copy deployment checks. It made no new paid calls.
+- The [committed-checkout check](../reports/committed_checkout_smoke.json) verified an archive of revision `348ed4b` containing only tracked files. Its tests passed (26 passed, one expected raw-dataset check skipped), and its Docker smoke test exercised local inference, both disabled hosted routes, the Python client and non-root execution. The subsequent verification commit changes evidence and submission-status documentation only.
 - Live hosted-route evidence and local-only container evidence identify their respective tested image IDs. The serving selections are preserved separately from the exploratory ML treatment comparison.
 - Treatment results use an already-inspected historical test set and are explicitly exploratory; they are not a fresh independent production-performance claim.
 
 ## Submission steps still pending
 
-1. Commit the implementation, reports, notebook, requirements and release artifact. The local working tree currently contains uncommitted/untracked implementation files.
-2. Push them to the intended GitHub repository and confirm reviewers can access the submitted revision and its files.
-3. Email the repository link to all three addresses specified in the guide: `xiaofeng@moneyme.com.au`, `carlo.ngo@moneyme.com.au`, and `jenvia.domingo@moneyme.com.au`.
+The implementation, reports, notebook, requirements and release artifact are committed in focused groups. The committed-source deployment rehearsal has passed.
+
+1. Push the commits to the intended GitHub repository, confirm reviewers can access the submitted revision, and inspect the GitHub Actions result after publication.
+2. Email the repository link to all three addresses specified in the guide: `xiaofeng@moneyme.com.au`, `carlo.ngo@moneyme.com.au`, and `jenvia.domingo@moneyme.com.au`.
 
 No repository push, reviewer invitation, or email submission is performed by this checklist review.

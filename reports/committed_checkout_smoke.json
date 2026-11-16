@@ -1,0 +1,49 @@
+{
+  "verified_at_utc": "2026-11-16T16:41:09.413001+00:00",
+  "source_revision": "348ed4bc515d512bec324db0150214a65f643395",
+  "checkout_method": "git archive of committed revision; tracked files only",
+  "tracked_files": 939,
+  "original_worktree_clean": true,
+  "credentials_present": false,
+  "raw_dataset_present": false,
+  "local_environment_present": false,
+  "selected_artifact_sha256": "3c2f3ded80b47df84bbe3d380304aa1a8c67ddaefcc5b2226013028cba6d53e3",
+  "package_import": "src/moneyme_sms_spam_classifier/__init__.py from committed archive",
+  "unit_tests": {
+    "passed": 26,
+    "skipped": 1,
+    "failures": 0,
+    "errors": 0,
+    "skip_reason": "Original dataset is intentionally not distributed"
+  },
+  "docker_smoke": {
+    "health": "passed",
+    "local_prediction": {
+      "label": "ham"
+    },
+    "hosted_disabled": "passed",
+    "sample_client": "passed",
+    "build_seconds": 8.905396580001252,
+    "startup_seconds": 3.6900639080013207,
+    "http_warm_p50_ms": 4.076089500813396,
+    "http_warm_p95_ms": 6.56586675067956,
+    "sequential_requests": 100,
+    "concurrency": 1,
+    "timing_note": "Two smoke-test SMS, warm HTTP connections; not a workload benchmark.",
+    "image": "sha256:be8ecf20f2b2944c063955040d7c33acc6694adefb0d0f83b528854a6e1d0bdb",
+    "runtime_uid": 10001,
+    "container_resources": {
+      "BlockIO": "0B / 0B",
+      "CPUPerc": "0.21%",
+      "Container": "moneyme-sms-smoke",
+      "ID": "4038641f01b6",
+      "MemPerc": "1.07%",
+      "MemUsage": "127.3MiB / 11.59GiB",
+      "Name": "moneyme-sms-smoke",
+      "NetIO": "45.9kB / 33.3kB",
+      "PIDs": "2"
+    }
+  },
+  "new_paid_calls": 0,
+  "scope_note": "Archived package sources were tested using the existing locked host environment; Docker built its own pinned runtime installation. Verification evidence and submission-status documentation are recorded in a subsequent commit."
+}

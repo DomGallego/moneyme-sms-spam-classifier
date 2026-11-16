@@ -75,7 +75,22 @@
     "This audit does not guarantee the absence of every defect or validate production behavior on current traffic.",
     "The treatment evaluation remains exploratory on an already-inspected historical test set.",
     "Hosted provider availability/weights were not revalidated through new paid calls; existing live evidence remains separately identified.",
-    "The deployment rehearsal uses a Git-visible working-tree copy; a final committed-checkout rehearsal and publication remain pending.",
-    "Git staging, commits, push and email submission were not performed."
-  ]
+    "The earlier deployment rehearsal used a Git-visible working-tree copy; the committed-source follow-up is recorded separately in post_commit_verification.",
+    "Local commits were created after the initial audit. No repository push or email submission has been performed."
+  ],
+  "post_commit_verification": {
+    "evidence": "reports/committed_checkout_smoke.json",
+    "verified_source_revision": "348ed4bc515d512bec324db0150214a65f643395",
+    "checkout_method": "git archive of committed revision; tracked files only",
+    "unit_tests": {
+      "passed": 26,
+      "skipped": 1,
+      "failures": 0,
+      "errors": 0,
+      "skip_reason": "Original dataset is intentionally not distributed"
+    },
+    "docker_smoke": "passed",
+    "new_paid_calls": 0,
+    "note": "The original audit above predates Git commits; this follow-up verifies the committed source. A subsequent metadata-only commit records evidence and submission status."
+  }
 }
