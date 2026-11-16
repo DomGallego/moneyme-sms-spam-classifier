@@ -1,0 +1,18 @@
+services:
+  classifier:
+    platform: linux/amd64
+    build:
+      context: ..
+      dockerfile: task_2_deployment/Dockerfile
+    ports:
+      - "127.0.0.1:8000:8000"
+    environment:
+      ENABLE_HOSTED: ${ENABLE_HOSTED:-false}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      SERVICE_BUDGET_USD: ${SERVICE_BUDGET_USD:-0}
+      MAX_INFLIGHT: ${MAX_INFLIGHT:-4}
+    volumes:
+      - service-runtime:/app/runtime
+    restart: unless-stopped
+volumes:
+  service-runtime:
