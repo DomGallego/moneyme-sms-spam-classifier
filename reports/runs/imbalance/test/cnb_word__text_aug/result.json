@@ -1,0 +1,51 @@
+{
+  "candidate": "cnb_word__text_aug",
+  "base_candidate": "cnb_word",
+  "group": "ml",
+  "kind": "classical",
+  "training_device": "cpu",
+  "training_precision": null,
+  "training_seconds": 11.315831687000014,
+  "treatment": "text_aug",
+  "variant": "text_aug",
+  "stage": "test",
+  "evaluation_scope": "Exploratory comparison on an existing, previously inspected test set. No fresh independent generalization claim.",
+  "metrics": {
+    "attempted": 1034,
+    "completed": 1034,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9758220502901354,
+    "accuracy": 0.9758220502901354,
+    "spam_f1": 0.8995983935742972,
+    "macro_f1": 0.9429272891455873,
+    "precision": 0.9411764705882353,
+    "recall": 0.8615384615384616,
+    "false_positive_rate": 0.007743362831858407,
+    "tn": 897,
+    "fp": 7,
+    "fn": 18,
+    "tp": 112,
+    "ham_support": 904,
+    "spam_support": 130,
+    "average_precision": 0.9577158453060973,
+    "brier": 0.022176948056583663,
+    "log_loss": 0.10181511938085483
+  },
+  "latency": {
+    "p50_ms": 0.7730065003670461,
+    "p95_ms": 1.1375640498954454,
+    "mean_ms": 0.8227828899543965,
+    "count": 100
+  },
+  "bulk_metric_threads": 1,
+  "warm_latency_threads": 1,
+  "uncertainty": {
+    "f1_ci_low": 0.8577083333333333,
+    "f1_ci_high": 0.9317686793493245,
+    "bootstrap_repetitions": 500,
+    "unit": "template family"
+  },
+  "threshold": 0.9191649717401098,
+  "artifact_sha256": "d10f40f5114e12f9a17c8889c5d6c3fba57e9f6b864490f417b9b2b4197da5b1",
+  "cost_usd": null
+}

@@ -1,0 +1,65 @@
+{
+  "candidate": "xgboost_embeddings__text_aug",
+  "group": "ml",
+  "kind": "frozen_embeddings",
+  "cv_f1": 0.9267738540848643,
+  "training_seconds": 694.2645440630004,
+  "parameters": {
+    "classifier__subsample": 0.8,
+    "classifier__scale_pos_weight": 4,
+    "classifier__n_estimators": 200,
+    "classifier__min_child_weight": 1,
+    "classifier__max_depth": 4,
+    "classifier__learning_rate": 0.1,
+    "classifier__colsample_bytree": 1.0
+  },
+  "probabilities": true,
+  "thresholds": {
+    "primary": {
+      "threshold": 0.7999652028083801,
+      "f1": 0.9375,
+      "precision": 0.96,
+      "recall": 0.916030534351145,
+      "predicted_spam": 125
+    },
+    "high_precision": {
+      "threshold": 0.9003481864929199,
+      "f1": 0.936,
+      "precision": 0.9831932773109243,
+      "recall": 0.8931297709923665,
+      "predicted_spam": 119
+    },
+    "precision_target": 0.98,
+    "minimum_positive_predictions": 10,
+    "note": "Validation estimates only; 10 flags is not strong statistical support for 98% precision."
+  },
+  "validation": {
+    "attempted": 1035,
+    "completed": 1035,
+    "coverage": 1.0,
+    "end_to_end_accuracy": 0.9845410628019323,
+    "accuracy": 0.9845410628019323,
+    "spam_f1": 0.9375,
+    "macro_f1": 0.9643398566703418,
+    "precision": 0.96,
+    "recall": 0.916030534351145,
+    "false_positive_rate": 0.0055309734513274336,
+    "tn": 899,
+    "fp": 5,
+    "fn": 11,
+    "tp": 120,
+    "ham_support": 904,
+    "spam_support": 131,
+    "average_precision": 0.9679385095895282,
+    "brier": 0.017671676459178005,
+    "log_loss": 0.07086441781670344
+  },
+  "artifact_bytes": 83738,
+  "base_candidate": "xgboost_embeddings",
+  "treatment": "text_aug",
+  "fitted_class_counts": [
+    2710,
+    2710
+  ],
+  "model_sha256": "7a15cf94ea8e4720784f24fb44d16f4a56a09595626a733768bb88df9e82c1dc"
+}

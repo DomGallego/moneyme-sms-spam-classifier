@@ -1,0 +1,7 @@
+{
+  "treatment": "text_aug",
+  "base_candidate": "logistic_char",
+  "pool_sha256": "569f43ba3c4ea7a1f2f373d87ec9b031a8cc0cc67c0935d686ff59d4a370a4cc",
+  "trials": 20,
+  "seed": 42
+}
